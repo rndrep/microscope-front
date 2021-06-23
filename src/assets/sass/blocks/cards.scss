@@ -1,0 +1,16 @@
+.cards {
+	display: flex;
+	position: relative;
+
+	margin: 3.2rem 0;
+}
+
+.cards__title {
+	width: 100%;
+	margin-bottom: 3rem;
+
+	text-align: center;
+	font-size: 2rem;
+	font-weight: 500;
+	line-height: 100%;
+}
