@@ -36,6 +36,9 @@ body {
 	min-width: 0;
 }
 
+$grid-columns: 12;
+$grid-gutter-width: 1.5rem;
+
 /* Bootstrap */
 @import '../../../node_modules/bootstrap/scss/_functions';
 @import '../../../node_modules/bootstrap/scss/_variables';
@@ -79,6 +82,7 @@ body {
 @import 'blocks/header';
 @import 'blocks/nav';
 @import 'blocks/cards';
+@import 'blocks/card';
 @import 'blocks/footer';
 @import 'blocks/content';
 

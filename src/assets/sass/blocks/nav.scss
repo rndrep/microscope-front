@@ -1,6 +1,6 @@
 .nav {
 	display: flex;
-	justify-content: flex-end;
+	align-self: flex-end;
 
 	font-size: 1.6rem;
 	font-weight: 400;
@@ -15,11 +15,12 @@
 	transition: background 0.1s linear;
 
 	&:hover {
-		background-color: $green;
-		// border-bottom: 2px solid $light-green;
+		// background-color: $green;
+		border-bottom: 2px solid $green-light;
+		color: $grey;
 	}
 
 	&.active {
-		background-color: $green;
+		border-bottom: 2px solid $green-light;
 	}
 }
