@@ -23,6 +23,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	background-color: #f0f0f0;
 }
 
 *,
@@ -34,6 +35,10 @@ body {
 * {
 	min-height: 0;
 	min-width: 0;
+}
+
+section {
+	padding: 3.2rem;
 }
 
 $grid-columns: 12;
@@ -85,6 +90,10 @@ $grid-gutter-width: 1.5rem;
 @import 'blocks/card';
 @import 'blocks/footer';
 @import 'blocks/content';
+@import 'blocks/rock-card';
+@import 'blocks/card-list';
+@import 'blocks/login';
+@import 'blocks/btn';
 
 a,
 a:hover,

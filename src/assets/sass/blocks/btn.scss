@@ -1,0 +1,32 @@
+.btn-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+
+	margin: 3.2rem 0 1.6rem 0;
+}
+
+.btn {
+	flex: 1;
+
+	display: inline-block;
+	padding: 0.5rem 1.6rem;
+
+	font-size: 1.6rem;
+	color: $green;
+
+	border-color: $green;
+	border-radius: $radius;
+	background-color: $white;
+
+	transition: background 0.1s linear;
+
+	&:hover {
+		background-color: $green;
+		color: $white;
+	}
+}
+
+.btn__text {
+	text-align: center;
+}

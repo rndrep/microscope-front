@@ -1,15 +1,13 @@
 .card {
 	margin-bottom: 3rem;
 
+	box-shadow: $shadow;
+
 	font-size: 1.6rem;
 }
 
 .card__body {
 	padding: 1.6rem 1.6rem;
-}
-
-.card__title {
-	font-size: 2rem;
 }
 
 .card__list-item {
@@ -24,7 +22,6 @@
 
 	&:hover {
 		background-color: $green-light;
-		// border: 1px solid $green-light;
 		color: $black;
 	}
 }

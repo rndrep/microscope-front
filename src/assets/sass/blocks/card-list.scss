@@ -1,0 +1,19 @@
+.card-list {
+	margin-top: 1.6rem;
+
+	font-size: 1.6rem;
+}
+
+.card-list li {
+	padding: 0.8rem 0rem;
+}
+
+.card-list__link {
+	padding: 0.8rem 0;
+	color: $green;
+
+	&:hover {
+		text-decoration: underline;
+		color: $green;
+	}
+}
