@@ -1,9 +1,11 @@
 .content {
-	flex: 1;
-	padding: 2rem 0;
-
-	margin: 0 0 4rem 0;
+	display: flex;
 	font-display: column;
 	justify-content: center;
-	background-color: #f8f8f8;
+	padding: 2rem 3.2rem;
+
+	margin: 3.2rem 0;
+	font-display: column;
+	justify-content: center;
+	background-color: $white;
 }

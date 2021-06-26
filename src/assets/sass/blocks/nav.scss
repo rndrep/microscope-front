@@ -3,21 +3,20 @@
 	align-self: flex-end;
 
 	font-size: 1.6rem;
-	font-weight: 400;
+	font-weight: 500;
+	// line-height: 1.2rem;
 }
 
 .nav__link {
 	padding: 2rem 1.6rem;
 
-	color: $white;
+	color: $grey-light;
 	text-decoration: none;
 
 	transition: background 0.1s linear;
 
 	&:hover {
-		// background-color: $green;
-		border-bottom: 2px solid $green-light;
-		color: $green-light;
+		color: $white;
 	}
 
 	&.active {
