@@ -1,38 +1,36 @@
 .btn-container {
-	display: flex;
-	// flex-wrap: wrap;
-	// gap: 1rem;
+    display: flex;
+    // flex-wrap: wrap;
+    // gap: 1rem;
 
-	margin: 1.6rem 0 1rem 0;
+    // margin: 1.6rem 0 1rem 0;
 }
 
 .btn {
-	flex: 1;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
 
-	display: inline-block;
-	padding: 0.5rem 1rem;
+    font-size: 1.4rem;
+    font-weight: 500;
 
-	font-size: 1.6rem;
-	color: $green;
-	font-weight: 500;
+    border-top: 1px solid rgba(38, 38, 38, 0.125);
+    // border-radius: $radius;
+    background-color: $white;
 
-	border-color: $green;
-	border-radius: $radius;
-	background-color: $white;
+    z-index: 2;
 
-	transition: background 0.1s linear;
+    transition: background 0.1s linear;
 
-	&:hover {
-		background-color: $green;
-		color: $white;
-	}
-}
+    &:hover {
+        background-color: $green-light;
+        color: $green;
+        // border: 1px $radius solid $grey-light;
 
-.btn-test {
-	border-color: $green;
-	border-radius: $radius;
-}
-
-.btn__text {
-	text-align: center;
+        .icon--card {
+            fill: $white;
+        }
+    }
 }
