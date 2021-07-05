@@ -33,7 +33,7 @@
 
 .card__thumb {
     position: relative;
-    aspect-ratio: 4/3;
+    aspect-ratio: 5/3;
 
     overflow: hidden;
 
@@ -61,6 +61,10 @@
         .card__img {
             transform: scale(1.1);
         }
+
+        .card__title {
+            color: $black;
+        }
     }
 }
 
@@ -86,9 +90,9 @@
     padding: 1rem;
     margin: 0;
 
-    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 800;
     color: $white;
-    // font-weight: normal;
 
     position: absolute;
     top: 0;

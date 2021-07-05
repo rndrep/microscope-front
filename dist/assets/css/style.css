@@ -9859,37 +9859,34 @@ a.text-dark:hover, a.text-dark:focus {
     z-index: 1000;
 }
 
-.header__row {
-    margin: 0;
+.header__inner {
+    display: flex;
     justify-content: space-between;
 }
 
-.header__logo {
-    padding: 2rem 1.6rem;
-    color: #fff;
-    text-decoration: none;
+.bg {
+    background: url("/assets/img/intro-bg.png") no-repeat;
 }
 
 .nav {
     display: flex;
-    align-self: flex-end;
+    justify-content: flex-end;
     font-size: 1.6rem;
+    font-style: normal;
     font-weight: 500;
 }
 
 .nav__link {
     padding: 2rem 1.6rem;
-    color: #dfe3e7;
+    color: #9e9e9e;
+    text-transform: uppercase;
     text-decoration: none;
     transition: background 0.1s linear;
 }
 
 .nav__link:hover {
-    color: #fff;
-}
-
-.nav__link.active {
-    border-bottom: 2px solid #c5eaa1;
+    background-color: black;
+    color: #6fa53b;
 }
 
 .cards {
@@ -9932,7 +9929,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .card__thumb {
     position: relative;
-    aspect-ratio: 4/3;
+    aspect-ratio: 5/3;
     overflow: hidden;
 }
 
@@ -9952,6 +9949,10 @@ a.text-dark:hover, a.text-dark:focus {
     transform: scale(1.1);
 }
 
+.card__thumb:hover .card__title {
+    color: #262626;
+}
+
 .card__img {
     display: block;
     width: 100%;
@@ -9969,7 +9970,8 @@ a.text-dark:hover, a.text-dark:focus {
     width: 100%;
     padding: 1rem;
     margin: 0;
-    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 800;
     color: #fff;
     position: absolute;
     top: 0;
@@ -10123,8 +10125,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .btn:hover {
-    background-color: #c5eaa1;
-    color: #6fa53b;
+    background-color: #262626;
 }
 
 .btn:hover .icon--card {
@@ -10137,9 +10138,24 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .icon--card {
-    width: 3.2rem;
-    height: 3.2rem;
-    fill: #262626;
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: #6fa53b;
+}
+
+.icon--logo {
+    display: flex;
+    align-items: center;
+    aspect-ratio: auto 111 / 30;
+    height: 66px;
+}
+
+.intro {
+    height: 560px;
+    display: flex;
+    background-color: #262626;
+    -o-object-fit: cover;
+    object-fit: cover;
 }
 
 a,

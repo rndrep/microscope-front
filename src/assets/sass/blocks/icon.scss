@@ -4,11 +4,19 @@
 }
 
 .icon--card {
-    // width: 2.4rem;
-    // height: 2.4rem;
+    width: 2.4rem;
+    height: 2.4rem;
 
-    width: 3.2rem;
-    height: 3.2rem;
+    // width: 3.2rem;
+    // height: 3.2rem;
 
-    fill: $black;
+    fill: $green;
+}
+
+.icon--logo {
+    display: flex;
+    align-items: center;
+
+    aspect-ratio: auto 111 / 30;
+    height: 66px;
 }

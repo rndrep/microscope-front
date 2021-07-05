@@ -1,25 +1,25 @@
 .nav {
-	display: flex;
-	align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
 
-	font-size: 1.6rem;
-	font-weight: 500;
-	// line-height: 1.2rem;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
 }
 
 .nav__link {
-	padding: 2rem 1.6rem;
+    padding: 2rem 1.6rem;
 
-	color: $grey-light;
-	text-decoration: none;
+    color: $grey;
+    text-transform: uppercase;
+    text-decoration: none;
 
-	transition: background 0.1s linear;
+    transition: background 0.1s linear;
 
-	&:hover {
-		color: $white;
-	}
+    &:hover {
+        // color: $white;
 
-	&.active {
-		border-bottom: 2px solid $green-light;
-	}
+        background-color: black;
+        color: $green;
+    }
 }
