@@ -17,7 +17,6 @@
     font-weight: 500;
 
     border-top: 1px solid rgba(38, 38, 38, 0.125);
-    // border-radius: $radius;
     background-color: $white;
 
     z-index: 2;
@@ -26,7 +25,6 @@
 
     &:hover {
         background-color: $black;
-        // border: 1px $radius solid $grey-light;
 
         .icon--card {
             fill: $white;

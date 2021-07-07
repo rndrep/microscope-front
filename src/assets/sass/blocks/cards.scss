@@ -1,18 +1,8 @@
-.cards {
-	display: flex;
-	position: relative;
+.title {
+    width: 100%;
+    margin-bottom: 3rem;
 
-	// margin: 1.6rem 0;
-}
-
-.cards__row {
-}
-
-.cards__title {
-	width: 100%;
-	margin-bottom: 3rem;
-
-	text-align: center;
-	font-weight: 500;
-	line-height: 100%;
+    text-align: center;
+    font-weight: 500;
+    line-height: 100%;
 }

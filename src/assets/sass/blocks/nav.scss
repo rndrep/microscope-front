@@ -1,6 +1,9 @@
 .nav {
     display: flex;
-    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
 
     font-size: 1.6rem;
     font-style: normal;
@@ -11,15 +14,12 @@
     padding: 2rem 1.6rem;
 
     color: $grey;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     text-decoration: none;
 
     transition: background 0.1s linear;
 
     &:hover {
-        // color: $white;
-
-        background-color: black;
-        color: $green;
+        color: $white;
     }
 }
