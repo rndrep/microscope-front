@@ -1,9 +1,8 @@
 .btn-container {
     display: flex;
-    // flex-wrap: wrap;
-    // gap: 1rem;
 
-    // margin: 1.6rem 0 1rem 0;
+    border-radius: 1px;
+    border-color: $green;
 }
 
 .btn {
@@ -11,23 +10,29 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 0.8rem 3.2rem;
 
-    font-size: 1.4rem;
     font-weight: 500;
+    font-size: 1.6rem;
 
-    border-top: 1px solid rgba(38, 38, 38, 0.125);
+    color: $green;
     background-color: $white;
+    border-color: $green;
 
     z-index: 2;
 
-    transition: background 0.1s linear;
+    transition: background 0.05s linear;
 
     &:hover {
-        background-color: $black;
-
+        background-color: $green-light;
+        color: $white;
         .icon--card {
             fill: $white;
         }
     }
+}
+
+.btn-group > .btn {
+    border-radius: 0 0 4px 4px;
+    border: 0;
 }

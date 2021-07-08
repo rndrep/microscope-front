@@ -1,68 +1,81 @@
 .rock-card {
-	margin-bottom: 3.2rem;
-	padding: 0 3.2rem;
+    margin-bottom: 3.2rem;
+    padding: 0 3.2rem;
 
-	background-color: $white;
+    background-color: $white;
 }
 
 .rock-card__top {
-	display: flex;
-	border-bottom: 1px solid $green-light;
-	justify-content: center;
+    display: flex;
+    border-bottom: 1px solid $green-light;
+    justify-content: center;
 }
 
 .rock-card__img {
-	display: flex;
-	// position: relative;
-	justify-content: center;
-	margin: 1.6rem 0;
+    display: flex;
+    // position: relative;
+    justify-content: center;
+    margin: 1.6rem 0;
 
-	border-right: 1px solid #c5eaa185;
+    border-right: 1px solid #c5eaa185;
 
-	@media (max-width: 576px), (max-width: 768px) {
-		border: none;
-	}
+    @media (max-width: 576px), (max-width: 768px) {
+        border: none;
+    }
 }
 
 .rock-card__img img {
-	max-width: 50%;
-	position: relative;
+    max-width: 50%;
+    position: relative;
 }
 
 .rock-card__info {
-	margin: 1.6rem 0;
-	padding-right: 3rem;
-	padding-left: 0;
-	border-right: 1px solid #c5eaa185;
-	@media (max-width: 576px) {
-		border-right: none;
-	}
+    margin: 1.6rem 0;
+    padding-right: 3rem;
+    padding-left: 0;
+    border-right: 1px solid #c5eaa185;
+    @media (max-width: 576px) {
+        border-right: none;
+    }
 }
 
 .rock-card__title {
 }
 
 .rock-card__text {
-	margin-top: 1.6rem;
+    margin-top: 1.6rem;
 
-	font-size: 1.6rem;
+    font-size: 1.6rem;
 }
 
 .rock-card__main {
-	margin: 0;
+    margin: 0;
 }
 
 .rock-card__info {
-	margin-bottom: 3.2rem;
+    margin-bottom: 3.2rem;
 }
 
 .rock-card__details {
-	margin: 1.6rem 0;
-	padding-left: 3rem;
-	padding-right: 1.6rem;
+    margin: 1.6rem 0;
+    padding-left: 3rem;
+    padding-right: 1.6rem;
 
-	@media (max-width: 576px) {
-		border-right: none;
-		padding-left: 0;
-	}
+    @media (max-width: 576px) {
+        border-right: none;
+        padding-left: 0;
+    }
+}
+
+.rock-card__btn {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    .btn {
+        margin-bottom: 1.6rem;
+    }
 }

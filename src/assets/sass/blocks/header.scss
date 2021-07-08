@@ -1,0 +1,18 @@
+.header {
+    background-color: $black;
+}
+.header__inner {
+    padding: 0.5rem 0;
+}
+.header__row {
+    align-items: center;
+}
+
+.header__logo {
+    display: flex;
+
+    @media (max-width: $breakpoints_md) {
+        justify-content: center;
+        margin-bottom: 0.8rem;
+    }
+}

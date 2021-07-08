@@ -9850,51 +9850,83 @@ a.text-dark:hover, a.text-dark:focus {
 
 /* Blocks */
 .header {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
     background-color: #262626;
-    top: 0;
-    right: 0;
-    z-index: 1000;
 }
 
 .header__inner {
-    display: flex;
-    justify-content: space-between;
+    padding: 0.5rem 0;
 }
 
-.bg {
-    background: url("/assets/img/intro-bg.png") no-repeat;
+.header__row {
+    align-items: center;
+}
+
+.header__logo {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .header__logo {
+        justify-content: center;
+        margin-bottom: 0.8rem;
+    }
 }
 
 .nav {
     display: flex;
-    justify-content: flex-end;
-    font-size: 1.6rem;
-    font-style: normal;
+    justify-content: center;
     font-weight: 500;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        margin-bottom: 0.8rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .nav {
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
 }
 
 .nav__link {
-    padding: 2rem 1.6rem;
+    padding: 0.8rem 1.6rem;
     color: #9e9e9e;
-    text-transform: uppercase;
     text-decoration: none;
-    transition: background 0.1s linear;
 }
 
 .nav__link:hover {
-    background-color: black;
-    color: #6fa53b;
+    color: #fff;
+    cursor: pointer;
 }
 
-.cards {
+.nav__link.active {
+    color: #fff;
+}
+
+.nav__btn {
     display: flex;
-    position: relative;
+    justify-content: flex-end;
 }
 
-.cards__title {
+@media (max-width: 768px) {
+    .nav__btn {
+        justify-content: center;
+        margin-bottom: 0.8rem;
+    }
+}
+
+.nav__btn .btn {
+    background-color: #262626;
+    border-color: #6fa53b;
+}
+
+.title {
     width: 100%;
     margin-bottom: 3rem;
     text-align: center;
@@ -9971,7 +10003,6 @@ a.text-dark:hover, a.text-dark:focus {
     padding: 1rem;
     margin: 0;
     font-style: normal;
-    font-weight: 800;
     color: #fff;
     position: absolute;
     top: 0;
@@ -10076,6 +10107,19 @@ a.text-dark:hover, a.text-dark:focus {
     }
 }
 
+.rock-card__btn {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.rock-card__btn .btn {
+    margin-bottom: 1.6rem;
+}
+
 .card-list {
     margin-top: 1.6rem;
     font-size: 1.6rem;
@@ -10108,6 +10152,8 @@ a.text-dark:hover, a.text-dark:focus {
 
 .btn-container {
     display: flex;
+    border-radius: 1px;
+    border-color: #6fa53b;
 }
 
 .btn {
@@ -10115,21 +10161,28 @@ a.text-dark:hover, a.text-dark:focus {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
-    font-size: 1.4rem;
+    padding: 0.8rem 3.2rem;
     font-weight: 500;
-    border-top: 1px solid rgba(38, 38, 38, 0.125);
+    font-size: 1.6rem;
+    color: #6fa53b;
     background-color: #fff;
+    border-color: #6fa53b;
     z-index: 2;
-    transition: background 0.1s linear;
+    transition: background 0.05s linear;
 }
 
 .btn:hover {
-    background-color: #262626;
+    background-color: #c5eaa1;
+    color: #fff;
 }
 
 .btn:hover .icon--card {
     fill: #fff;
+}
+
+.btn-group > .btn {
+    border-radius: 0 0 4px 4px;
+    border: 0;
 }
 
 .icon {
@@ -10153,7 +10206,7 @@ a.text-dark:hover, a.text-dark:focus {
 .intro {
     height: 560px;
     display: flex;
-    background-color: #262626;
+    background: linear-gradient(76.3deg, #2c3e4e 12.6%, #456783 82.8%);
     -o-object-fit: cover;
     object-fit: cover;
 }
