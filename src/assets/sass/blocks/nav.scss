@@ -23,6 +23,8 @@
     text-decoration: none;
 
     &:hover {
+        transition: 0.3s ease-in-out;
+
         color: $white;
         cursor: pointer;
     }
@@ -39,10 +41,5 @@
     @media (max-width: $breakpoints_md) {
         justify-content: center;
         margin-bottom: 0.8rem;
-    }
-
-    .btn {
-        background-color: $black;
-        border-color: $green;
     }
 }

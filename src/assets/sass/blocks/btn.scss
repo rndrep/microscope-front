@@ -7,32 +7,82 @@
 
 .btn {
     display: inline-flex;
-    flex-direction: column;
+    flex-direction: row;
+
     justify-content: center;
     align-items: center;
     padding: 0.8rem 3.2rem;
 
-    font-weight: 500;
-    font-size: 1.6rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+
+    background-color: transparent;
 
     color: $green;
-    background-color: $white;
     border-color: $green;
 
     z-index: 2;
 
-    transition: background 0.05s linear;
+    transition: 0.3s ease-in-out;
 
     &:hover {
-        background-color: $green-light;
-        color: $white;
+        background-color: $white;
+        color: $green;
+
         .icon--card {
-            fill: $white;
+            fill: $black;
+        }
+    }
+
+    @media (max-width: $breakpoints_xm) {
+        font-size: 0;
+        .icon,
+        .icon--green {
+            margin: 0;
         }
     }
 }
 
 .btn-group > .btn {
+    background-color: $white;
+
     border-radius: 0 0 4px 4px;
     border: 0;
+
+    &:hover {
+        background-color: $green;
+        color: $black;
+        .icon--green {
+            fill: $white;
+        }
+    }
+    @media (max-width: $breakpoints_xl) {
+        padding: 0.8rem 1.6rem;
+    }
+}
+
+.btn--white {
+    border-color: $white;
+    color: $white;
+}
+
+.btn--green {
+    color: $white;
+}
+
+.intro__btn > .btn {
+    &:nth-child(1) {
+        border-radius: 4px 0 0 4px;
+    }
+    &:nth-child(2) {
+        border-radius: 0 4px 4px 0;
+        border-left: none;
+    }
+
+    &:hover {
+        .icon {
+            fill: $green;
+        }
+    }
 }

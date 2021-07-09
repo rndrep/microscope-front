@@ -1,15 +1,17 @@
 .icon {
     width: 2.4rem;
     height: 2.4rem;
+
+    margin-right: 0.8rem;
+
+    fill: $white;
 }
 
-.icon--card {
+.icon--green {
     width: 2.4rem;
     height: 2.4rem;
 
-    // width: 3.2rem;
-    // height: 3.2rem;
-
+    margin-right: 0.8rem;
     fill: $green;
 }
 

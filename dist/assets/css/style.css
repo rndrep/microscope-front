@@ -9901,6 +9901,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .nav__link:hover {
+    transition: 0.3s ease-in-out;
     color: #fff;
     cursor: pointer;
 }
@@ -9919,11 +9920,6 @@ a.text-dark:hover, a.text-dark:focus {
         justify-content: center;
         margin-bottom: 0.8rem;
     }
-}
-
-.nav__btn .btn {
-    background-color: #262626;
-    border-color: #6fa53b;
 }
 
 .title {
@@ -10000,7 +9996,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .card__title {
     width: 100%;
-    padding: 1rem;
+    padding: 0.8rem 1.6rem;
     margin: 0;
     font-style: normal;
     color: #fff;
@@ -10158,41 +10154,94 @@ a.text-dark:hover, a.text-dark:focus {
 
 .btn {
     display: inline-flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 0.8rem 3.2rem;
-    font-weight: 500;
-    font-size: 1.6rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    background-color: transparent;
     color: #6fa53b;
-    background-color: #fff;
     border-color: #6fa53b;
     z-index: 2;
-    transition: background 0.05s linear;
+    transition: 0.3s ease-in-out;
 }
 
 .btn:hover {
-    background-color: #c5eaa1;
-    color: #fff;
+    background-color: #fff;
+    color: #6fa53b;
 }
 
 .btn:hover .icon--card {
-    fill: #fff;
+    fill: #262626;
+}
+
+@media (max-width: 432px) {
+    .btn {
+        font-size: 0;
+    }
+
+    .btn .icon,
+      .btn .icon--green {
+        margin: 0;
+    }
 }
 
 .btn-group > .btn {
+    background-color: #fff;
     border-radius: 0 0 4px 4px;
     border: 0;
+}
+
+.btn-group > .btn:hover {
+    background-color: #6fa53b;
+    color: #262626;
+}
+
+.btn-group > .btn:hover .icon--green {
+    fill: #fff;
+}
+
+@media (max-width: 1200px) {
+    .btn-group > .btn {
+        padding: 0.8rem 1.6rem;
+    }
+}
+
+.btn--white {
+    border-color: #fff;
+    color: #fff;
+}
+
+.btn--green {
+    color: #fff;
+}
+
+.intro__btn > .btn:nth-child(1) {
+    border-radius: 4px 0 0 4px;
+}
+
+.intro__btn > .btn:nth-child(2) {
+    border-radius: 0 4px 4px 0;
+    border-left: none;
+}
+
+.intro__btn > .btn:hover .icon {
+    fill: #6fa53b;
 }
 
 .icon {
     width: 2.4rem;
     height: 2.4rem;
+    margin-right: 0.8rem;
+    fill: #fff;
 }
 
-.icon--card {
+.icon--green {
     width: 2.4rem;
     height: 2.4rem;
+    margin-right: 0.8rem;
     fill: #6fa53b;
 }
 
@@ -10204,11 +10253,54 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .intro {
-    height: 560px;
+    height: 496px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: linear-gradient(76.3deg, #2c3e4e 12.6%, #456783 82.8%);
+    background-image: url("/assets/img/mount.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: hard-light;
     -o-object-fit: cover;
     object-fit: cover;
+}
+
+.intro__inner {
+    width: 100%;
+    max-width: 595px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro__title {
+    margin: 0 0 3.2rem;
+    font-size: 4.8rem;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.1;
+}
+
+@media (max-width: 432px) {
+    .intro__title {
+        font-size: 3.6rem;
+    }
+}
+
+.intro__subtitle {
+    font-size: 1.6rem;
+    color: #fff;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.intro__btn {
+    display: flex;
+    justify-content: center;
+    padding-top: 3.2rem;
 }
 
 a,
@@ -10216,4 +10308,12 @@ a:hover,
 a:visited,
 a:focus {
     text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0 0 1rem;
 }
