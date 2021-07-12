@@ -4,8 +4,8 @@
     flex-direction: column;
     justify-content: center;
 
-    background: $gradient;
-    background-image: url("/assets/img/mount.jpg");
+    // background: $gradient;
+    background-image: $gradient, url("/assets/img/mount.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -16,8 +16,11 @@
 }
 
 .intro__inner {
+    justify-content: center;
     width: 100%;
-    max-width: 595px;
+
+    padding-top: 7rem;
+    // max-width: 595px;
     margin: 0 auto;
 
     text-align: center;

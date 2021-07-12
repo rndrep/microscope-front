@@ -86,6 +86,7 @@ $grid-gutter-width: 1.5rem;
 // @import "../../../node_modules/bootstrap/scss/_print";
 
 /* Blocks */
+@import "blocks/img";
 @import "blocks/header";
 @import "blocks/nav";
 @import "blocks/cards";
