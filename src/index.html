@@ -14,13 +14,13 @@ title: Home
                     параметры поиска или интерактивную карту.
                 </h2>
                 <div class="intro__btn">
-                    <a class="btn btn_intro btn--white" href="">
+                    <a class="btn btn_intro btn--white" href="#">
                         <svg class="icon">
                             <use href="/assets/sprite/sprite.svg#search"></use>
                         </svg>
                         Поиск</a
                     >
-                    <a class="btn btn_intro btn--white" href="">
+                    <a class="btn btn_intro btn--white" href="#">
                         <svg class="icon">
                             <use
                                 href="/assets/sprite/sprite.svg#location"
@@ -34,5 +34,37 @@ title: Home
     </div>
 </section>
 <!-- ./ Intro -->
+
+<!-- Search -->
+<div class="search">
+    <div class="container">
+        <form class="row row-cols-3 align-items-center">
+            <div class="col">
+                <label class="visually-hidden" for="specificSizeInputName"
+                    >Название</label
+                >
+                <input type="text" class="form-control" id="" />
+            </div>
+            <div class="col">
+                <label class="visually-hidden" for="specificSizeInputName"
+                    >Описание</label
+                >
+                <input type="text" class="form-control" id="" />
+            </div>
+            <div class="col">
+                <label class="visually-hidden" for="specificSizeSelect"
+                    >Тип</label
+                >
+                <select class="form-select" id="specificSizeSelect">
+                    <option selected>Choose...</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- ./ Search -->
 {{> cards}}
-<!-- <div class="container">Content</div> -->

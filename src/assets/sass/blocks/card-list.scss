@@ -1,19 +1,23 @@
 .card-list {
-	margin-top: 1.6rem;
+    margin-top: 1.6rem;
 
-	font-size: 1.6rem;
+    font-size: 1.6rem;
+
+    *:last-child {
+        padding: 0;
+    }
 }
 
 .card-list li {
-	padding: 0.8rem 0rem;
+    padding: 0.8rem 0rem;
 }
 
 .card-list__link {
-	padding: 0.8rem 0;
-	color: $green;
+    padding: 0.8rem 0;
+    color: $green;
 
-	&:hover {
-		text-decoration: underline;
-		color: $green;
-	}
+    &:hover {
+        text-decoration: underline;
+        color: $green;
+    }
 }
