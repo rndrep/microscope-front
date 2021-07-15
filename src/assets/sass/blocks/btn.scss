@@ -32,10 +32,6 @@
     @media (max-width: $breakpoints_xl) {
         padding: 0.8rem 1.6rem;
     }
-
-    @media (max-width: 425px) {
-        width: 100%;
-    }
 }
 
 .btn_group {
@@ -47,7 +43,7 @@
     &:hover {
         background-color: $green;
         color: $white;
-        .icon--green {
+        .icon {
             fill: $white;
         }
     }
@@ -55,11 +51,12 @@
 
 .btn_rock-card {
     margin-bottom: 1.6rem;
+    min-width: 190px;
 
     &:hover {
         background-color: $green;
         color: $white;
-        .icon--green {
+        .icon {
             fill: $white;
         }
     }
@@ -94,14 +91,25 @@
             fill: $green;
         }
     }
+
+    @media (min-width: 425px) {
+        min-width: 190px;
+    }
+
+    @media (max-width: 425px) {
+        width: 100%;
+    }
 }
 
 .btn_nav {
-    @media (min-width: $breakpoints_md) and (max-width: $breakpoints_lg) {
+    @media (min-width: 375px) and (max-width: $breakpoints_lg) {
         font-size: 0;
-        .icon,
-        .icon--green {
+        .icon {
             margin: 0;
         }
+    }
+
+    @media (max-width: 375px) {
+        width: 100%;
     }
 }

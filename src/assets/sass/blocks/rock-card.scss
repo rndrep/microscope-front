@@ -38,8 +38,7 @@
 }
 
 .rock-card__text {
-    margin-top: 1.6rem;
-
+    margin-bottom: 1.6rem;
     font-size: 1.6rem;
 }
 
@@ -77,4 +76,8 @@
     @media (max-width: $breakpoints_md) {
         padding-left: 0;
     }
+}
+
+.rock-card__title {
+    margin-bottom: 1.6rem;
 }

@@ -2,12 +2,15 @@
     display: flex;
     justify-content: center;
 
+    margin-right: 1.6rem;
+
     font-weight: 500;
     font-size: 1.6rem;
     text-transform: uppercase;
 
     @media (max-width: $breakpoints_md) {
         margin-bottom: 0.8rem;
+        align-items: flex-end;
     }
 
     @media (max-width: 375px) {
@@ -17,8 +20,14 @@
     }
 }
 
+.navbar-expand-md .navbar-nav .nav-link {
+    @media (min-width: $breakpoints_md) {
+        padding-right: 1.6rem;
+        padding-left: 1.6rem;
+    }
+}
+
 .nav__link {
-    padding: 0.8rem 1.6rem;
     color: $grey;
     text-decoration: none;
 
@@ -39,7 +48,6 @@
     justify-content: flex-end;
 
     @media (max-width: $breakpoints_md) {
-        justify-content: center;
         margin-bottom: 0.8rem;
     }
 }
