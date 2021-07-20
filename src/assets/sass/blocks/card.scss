@@ -54,6 +54,9 @@
     }
 
     &:hover {
+        .card__title {
+            color: darken($white, 10%);
+        }
         .card__img {
             transform: scale(1.1);
         }
@@ -94,7 +97,4 @@
 
 .card__btn-group {
     display: flex;
-
-    border-radius: 1px;
-    border-color: $green;
 }

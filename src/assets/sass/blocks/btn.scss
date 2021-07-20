@@ -17,8 +17,10 @@
 
     z-index: 2;
 
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    // transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    //     box-shadow 0.15s ease-in-out;
+
+    // border-color 0.15s ease-in-out
 
     &:hover {
         background-color: $white;
@@ -29,6 +31,10 @@
         }
     }
 
+    .icon {
+        margin-right: 0.8rem;
+    }
+
     @media (max-width: $breakpoints_xl) {
         padding: 0.8rem 1.6rem;
     }
@@ -36,15 +42,19 @@
 
 .btn_group {
     background-color: $white;
+    border: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 
-    border-radius: 0 0 4px 4px;
-    border: 0;
+    .icon {
+        fill: $green;
+        margin-right: 0;
+    }
 
     &:hover {
-        background-color: $green;
-        color: $white;
         .icon {
-            fill: $white;
+            transition: fill 0.15s ease-in-out;
+            fill: lighten($green, 20%);
         }
     }
 }

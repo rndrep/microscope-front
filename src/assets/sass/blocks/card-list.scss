@@ -14,8 +14,9 @@
     padding: 0.8rem 0;
     color: $green;
 
+    @include link-hover($green);
+
     &:hover {
         text-decoration: underline;
-        color: $green;
     }
 }
