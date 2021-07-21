@@ -5,10 +5,33 @@ $green-light: #c5eaa1;
 $black: #262626;
 $grey: #9e9e9e;
 $lighten-grey: lighten($grey, 30%);
-$grey-light: #dfe3e7;
+$grey-light: #e9ecef;
 $radius: 4px;
 $shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 $gradient: linear-gradient(76.3deg, #2c3e4e 12.6%, #456783 82.8%);
+
+// Breadcrumb
+$breadcrumb-font-size: null;
+$breadcrumb-padding-y: 0;
+$breadcrumb-padding-x: 0;
+$breadcrumb-item-padding-x: 0.5rem;
+$breadcrumb-margin-bottom: 1.6rem;
+$breadcrumb-bg: null;
+$breadcrumb-divider-color: $grey;
+$breadcrumb-active-color: $grey;
+$breadcrumb-divider: quote(">");
+$breadcrumb-divider-flipped: $breadcrumb-divider;
+$breadcrumb-border-radius: null;
+
+// Pagination
+$pagination-color: $green;
+$pagination-bg: $white;
+$pagination-active-color: $white;
+$pagination-active-bg: $green;
+
+$pagination-hover-color: $green;
+// $pagination-hover-bg: $gray-200;
+// $pagination-hover-border-color: $gray-300;
 
 // $grid-breakpoints: (
 //     // Extra small screen / phone

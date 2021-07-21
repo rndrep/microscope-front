@@ -7,7 +7,7 @@
     padding: 0.8rem 3.2rem;
 
     font-weight: 600;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     text-transform: uppercase;
 
     background-color: transparent;
@@ -17,17 +17,17 @@
 
     z-index: 2;
 
-    // transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    //     box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out, fill 0.3s ease-in-out;
 
     // border-color 0.15s ease-in-out
 
     &:hover {
-        background-color: $white;
-        color: $green;
+        background-color: $green;
+        color: $white;
 
-        .icon--card {
-            fill: $black;
+        .icon {
+            fill: $white;
         }
     }
 
@@ -52,9 +52,10 @@
     }
 
     &:hover {
+        background-color: $grey-light;
         .icon {
             transition: fill 0.15s ease-in-out;
-            fill: lighten($green, 20%);
+            fill: $green;
         }
     }
 }
@@ -78,16 +79,14 @@
     }
 }
 
-.btn--white {
-    border-color: $white;
-    color: $white;
-}
-
 .btn--green {
     color: $white;
 }
 
 .btn_intro {
+    border-color: $white;
+    color: $white;
+
     &:nth-child(1) {
         border-radius: 4px 0 0 4px;
     }
@@ -97,6 +96,8 @@
     }
 
     &:hover {
+        background-color: $white;
+        color: $green;
         .icon {
             fill: $green;
         }

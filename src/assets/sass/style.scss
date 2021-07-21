@@ -91,3 +91,11 @@ p {
 @import "blocks/icon";
 @import "blocks/search";
 @import "blocks/intro";
+@import "blocks/breadcrumb";
+@import "blocks/pagination";
+
+a {
+    color: var(--c, $green);
+}
+
+// color: $green;
