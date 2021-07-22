@@ -1,11 +1,61 @@
+// Color system
+
+// gray-color-variables
 $white: #fff;
-$green: #6fa53b;
-$lighten-green: lighten($green, 54%);
-$green-light: #c5eaa1;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+
+$gray: #a7a5a6;
 $black: #262626;
-$grey: #9e9e9e;
-$lighten-grey: lighten($grey, 30%);
-$grey-light: #e9ecef;
+// gray-color-variables
+
+// gray-colors-map
+$grays: (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900,
+);
+// gray-colors-map
+
+$green: #6fa53b;
+
+//  colors-map
+$colors: (
+    "green": $green,
+    "white": $white,
+    "gray": $gray-600,
+    "gray-dark": $gray-800,
+);
+//  colors-map
+
+// fusv-enable
+$green-100: tint-color($green, 80%);
+$green-200: tint-color($green, 60%);
+$green-300: tint-color($green, 40%);
+$green-400: tint-color($green, 20%);
+$green-500: $green;
+$green-600: shade-color($green, 20%);
+$green-700: shade-color($green, 40%);
+$green-800: shade-color($green, 60%);
+$green-900: shade-color($green, 80%);
+// fusv-enable
+
+$green-light: #c5eaa1;
+$lighten-gray: lighten($gray, 30%);
+$gray-light: #e9ecef;
 $radius: 4px;
 $shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 $gradient: linear-gradient(76.3deg, #2c3e4e 12.6%, #456783 82.8%);
@@ -17,8 +67,8 @@ $breadcrumb-padding-x: 0;
 $breadcrumb-item-padding-x: 0.5rem;
 $breadcrumb-margin-bottom: 1.6rem;
 $breadcrumb-bg: null;
-$breadcrumb-divider-color: $grey;
-$breadcrumb-active-color: $grey;
+$breadcrumb-divider-color: $gray;
+$breadcrumb-active-color: $gray;
 $breadcrumb-divider: quote(">");
 $breadcrumb-divider-flipped: $breadcrumb-divider;
 $breadcrumb-border-radius: null;
@@ -30,31 +80,17 @@ $pagination-active-color: $white;
 $pagination-active-bg: $green;
 
 $pagination-hover-color: $green;
-// $pagination-hover-bg: $gray-200;
-// $pagination-hover-border-color: $gray-300;
 
-// $grid-breakpoints: (
-//     // Extra small screen / phone
-//     xs: 0,
-//     // Small screen / phone
-//     sm: 576px,
-//     // Medium screen / tablet
-//     md: 768px,
-//     // Large screen / desktop
-//     lg: 992px,
-//     // Extra large screen / wide desktop
-//     xl: 1200px
-// );
+// Inputs
+$input-btn-focus-color: $green-100;
+$input-focus-border-color: $green-200;
 
+// grid-breakpoints
 $breakpoints_xs: 0; // 0-576px
 $breakpoints_xm: 432px; // 435px-576
 $breakpoints_sm: 576px; // 576px-768
 $breakpoints_md: 768px; // 768px-992
 $breakpoints_lg: 992px; // 992-1200
 $breakpoints_xl: 1200px; // 1200-...
-
-// $container-max-widths: (
-//     md: 720px,
-//     lg: 960px,
-//     xl: 1140px,
-// );
+$breakpoints_xxl: 1400px; // 1400-...
+// grid-breakpoints
