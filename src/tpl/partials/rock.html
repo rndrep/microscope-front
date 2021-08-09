@@ -1,12 +1,15 @@
+{{> breadcrumb}}
+
+<!-- Rock -->
 <section class="rock">
     <div class="container">
         <div class="row">
             <div class="col">
-                <!-- rock-card -->
-                <article class="rock-card">
-                    <!-- rock-img -->
-                    <div class="row rock-card__top justify-content-center">
-                        <div class="rock-card__img col-sm-12 col-md-7">
+                <!-- rock -->
+                <article class="rock__card">
+                    <!-- rock__img -->
+                    <div class="row rock__top justify-content-center">
+                        <div class="rock__img col-sm-12 col-md-7">
                             <img
                                 class="img"
                                 src="/assets/img/Epigranite_Isle-of-Skye.jpg"
@@ -14,8 +17,12 @@
                             />
                         </div>
 
-                        <div class="rock-card__btn col-12 col-sm-12 col-md-5">
-                            <a class="btn btn_rock-card" href="">
+                        <div class="rock__launch-btn col-12 col-sm-12 col-md-5">
+                            <div class="rock__text rock__text--gray">
+                                Посмотреть тонкий срез образца
+                            </div>
+
+                            <a class="btn btn_rock" href="">
                                 <svg class="icon">
                                     <use
                                         href="/assets/sprite/sprite.svg#biotech"
@@ -23,7 +30,10 @@
                                 </svg>
                                 Микроскоп</a
                             >
-                            <a class="btn btn_rock-card" href="">
+                            <div class="rock__text rock__text--gray">
+                                Посмотреть поворот образца
+                            </div>
+                            <a class="btn btn_rock" href="">
                                 <svg class="icon">
                                     <use
                                         href="/assets/sprite/sprite.svg#360"
@@ -33,13 +43,13 @@
                             >
                         </div>
                     </div>
-                    <!-- /. rock-img -->
+                    <!-- /. rock__img -->
 
-                    <!-- rock-info -->
-                    <div class="row rock-card__main">
-                        <!-- rock-details -->
-                        <div class="rock-card__details order-sm-2 col-sm-5">
-                            <h1 class="rock-card__title">Детали</h1>
+                    <!-- rock__info -->
+                    <div class="row rock__main">
+                        <!-- rock__details -->
+                        <div class="rock__details order-sm-2 col-sm-5">
+                            <h1 class="rock__title">Детали</h1>
                             <ul class="card-list list-group list-group-flush">
                                 <li class="list-group-item">
                                     Тип:
@@ -79,10 +89,10 @@
                                 </li>
                             </ul>
                         </div>
-                        <!-- ./ rock-details -->
-                        <div class="rock-card__info order-sm-1 col-sm-7">
-                            <h1 class="rock-card__title">Название</h1>
-                            <p class="rock-card__text">
+                        <!-- ./ rock__details -->
+                        <div class="rock__info order-sm-1 col-sm-7">
+                            <h1 class="rock__title">Название</h1>
+                            <p class="rock__text">
                                 Этот эпигранит происходит из озера Лох-Айнорт на
                                 острове Скай. Он в основном состоит из кварца,
                                 щелочного полевого шпата и полевого шпата
@@ -93,7 +103,7 @@
                                 апатитом и биотитом. Вторичные продукты включают
                                 эпидот и хлорит (заменяющий биотит).
                             </p>
-                            <p class="rock-card__text">
+                            <p class="rock__text">
                                 Этот эпигранит происходит из озера Лох-Айнорт на
                                 острове Скай. Он в основном состоит из кварца,
                                 щелочного полевого шпата и полевого шпата
@@ -106,10 +116,11 @@
                             </p>
                         </div>
                     </div>
-                    <!-- /. rock-info -->
+                    <!-- /. rock__info -->
                 </article>
-                <!-- /. rock-card -->
+                <!-- /. rock -->
             </div>
         </div>
     </div>
 </section>
+<!-- ./ Rock -->

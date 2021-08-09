@@ -1,20 +1,20 @@
 .rock {
-    margin: 3.2rem 0 6.4rem 0;
+    margin-bottom: 3.2rem;
 }
 
-.rock-card {
+.rock__card {
     padding: 0 3.2rem;
 
     background-color: $white;
 }
 
-.rock-card__top {
+.rock__top {
     display: flex;
     border-bottom: 1px solid $green-100;
     justify-content: center;
 }
 
-.rock-card__img {
+.rock__img {
     display: flex;
     justify-content: center;
 
@@ -27,30 +27,35 @@
     }
 }
 
-.rock-card__info {
+.rock__info {
     margin: 1.6rem 0;
     padding-right: 3rem;
     padding-left: 0;
+
+    *:last-child {
+        margin-bottom: 0;
+    }
 
     @media (max-width: 576px) {
         border-right: none;
     }
 }
 
-.rock-card__text {
-    margin-bottom: 1.6rem;
+.rock__text {
+    margin-bottom: 0.8rem;
+
     font-size: 1.6rem;
 }
 
-.rock-card__main {
+.rock__text--gray {
+    color: $gray-500;
+}
+
+.rock__main {
     margin: 0;
 }
 
-.rock-card__info {
-    margin-bottom: 3.2rem;
-}
-
-.rock-card__details {
+.rock__details {
     margin: 1.6rem 0;
     padding-left: 3rem;
     padding-right: 1.6rem;
@@ -63,7 +68,7 @@
     }
 }
 
-.rock-card__btn {
+.rock__launch-btn {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -78,6 +83,6 @@
     }
 }
 
-.rock-card__title {
+.rock__title {
     margin-bottom: 1.6rem;
 }

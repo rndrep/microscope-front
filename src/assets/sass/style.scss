@@ -62,6 +62,8 @@ p {
     margin: 0 0 1rem;
 }
 
+$spacer: 1.6rem;
+
 /* Bootstrap */
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 @import "../../../node_modules/bootstrap/scss/bootstrap-grid";
@@ -85,7 +87,7 @@ p {
 @import "blocks/card";
 @import "blocks/footer";
 @import "blocks/content";
-@import "blocks/rock-card";
+@import "blocks/rock";
 @import "blocks/card-list";
 @import "blocks/login";
 @import "blocks/btn";

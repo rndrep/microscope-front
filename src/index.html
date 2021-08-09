@@ -37,159 +37,134 @@ title: Home
 </section>
 <!-- ./ Intro -->
 
-<!-- Breadcrumb -->
-<div class="container">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Главная</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Изучение</li>
-        </ol>
-    </nav>
-</div>
-<!-- ./ Breadcrumb -->
+{{> breadcrumb}}
 
 <!-- Search -->
 <div class="search">
     <div class="container">
         <h1 class="search__title">Поиск по фильтрам</h1>
         <form class="search-form">
-            <fieldset>
-                <div
-                    class="
-                        search__fields
-                        row row-cols-1 row-cols-md-2 row-cols-lg-3
-                    "
-                >
-                    <div class="col">
-                        <label for="searchform-name" class="form-label"
-                            >Название</label
-                        >
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="searchform-name"
-                        />
-                    </div>
-                    <div class="col">
-                        <label for="searchform-name" class="form-label"
-                            >Название</label
-                        >
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="searchform-name"
-                        />
-                    </div>
-                    <div class="col">
-                        <label class="form-label" for="searchform-type"
-                            >Тип</label
-                        >
-                        <select
-                            class="form-select"
-                            id="searchform-type"
-                            aria-label="Default select example"
-                        >
-                            <option selected>Выбрать</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </div>
-                    <div class="col">
-                        <label class="form-label" for="searchform-type"
-                            >Тип</label
-                        >
-                        <select
-                            class="form-select"
-                            id="searchform-type"
-                            aria-label="Default select example"
-                        >
-                            <option selected>Выбрать</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </div>
-                    <div class="col">
-                        <label class="form-label" for="searchform-type"
-                            >Тип</label
-                        >
-                        <select
-                            class="form-select"
-                            id="searchform-type"
-                            aria-label="Default select example"
-                        >
-                            <option selected>Выбрать</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </div>
-                    <div class="col">
-                        <label class="form-label" for="searchform-type"
-                            >Тип</label
-                        >
-                        <select
-                            class="form-select"
-                            id="searchform-type"
-                            aria-label="Default select example"
-                        >
-                            <option selected>Выбрать</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </div>
-                    <div class="col">
-                        <label class="form-label" for="searchform-type"
-                            >Тип</label
-                        >
-                        <select
-                            class="form-select"
-                            id="searchform-type"
-                            aria-label="Default select example"
-                        >
-                            <option selected>Выбрать</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </div>
-                    <div class="col">
-                        <label class="form-label" for="searchform-type"
-                            >Тип</label
-                        >
-                        <select
-                            class="form-select"
-                            id="searchform-type"
-                            aria-label="Default select example"
-                        >
-                            <option selected>Выбрать</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </div>
-                    <div class="col">
-                        <label class="form-label" for="searchform-type"
-                            >Тип</label
-                        >
-                        <select
-                            class="form-select"
-                            id="searchform-type"
-                            aria-label="Default select example"
-                        >
-                            <option selected>Выбрать</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </div>
+            <div
+                class="
+                    search__fields
+                    row row-cols-1 row-cols-md-2 row-cols-lg-3
+                "
+            >
+                <div class="col">
+                    <label for="searchform-name" class="form-label"
+                        >Название</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="searchform-name"
+                    />
                 </div>
-                <div class="search__btn">
-                    <button class="btn">Найти</button>
+                <div class="col">
+                    <label for="searchform-name" class="form-label"
+                        >Название</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="searchform-name"
+                    />
                 </div>
-            </fieldset>
+                <div class="col">
+                    <label class="form-label" for="searchform-type">Тип</label>
+                    <select
+                        class="form-select"
+                        id="searchform-type"
+                        aria-label="Default select example"
+                    >
+                        <option selected>Выбрать</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label class="form-label" for="searchform-type">Тип</label>
+                    <select
+                        class="form-select"
+                        id="searchform-type"
+                        aria-label="Default select example"
+                    >
+                        <option selected>Выбрать</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label class="form-label" for="searchform-type">Тип</label>
+                    <select
+                        class="form-select"
+                        id="searchform-type"
+                        aria-label="Default select example"
+                    >
+                        <option selected>Выбрать</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label class="form-label" for="searchform-type">Тип</label>
+                    <select
+                        class="form-select"
+                        id="searchform-type"
+                        aria-label="Default select example"
+                    >
+                        <option selected>Выбрать</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label class="form-label" for="searchform-type">Тип</label>
+                    <select
+                        class="form-select"
+                        id="searchform-type"
+                        aria-label="Default select example"
+                    >
+                        <option selected>Выбрать</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label class="form-label" for="searchform-type">Тип</label>
+                    <select
+                        class="form-select"
+                        id="searchform-type"
+                        aria-label="Default select example"
+                    >
+                        <option selected>Выбрать</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label class="form-label" for="searchform-type">Тип</label>
+                    <select
+                        class="form-select"
+                        id="searchform-type"
+                        aria-label="Default select example"
+                    >
+                        <option selected>Выбрать</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="search__btn">
+                <button class="btn" type="submit">Найти</button>
+            </div>
         </form>
     </div>
 </div>
