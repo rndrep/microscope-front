@@ -59,9 +59,20 @@ h6 {
 }
 
 p {
-    margin: 0 0 1rem;
+    margin-bottom: 0.8rem;
+
+    font-size: 1.6rem;
 }
 
+.main {
+    margin-bottom: 3.2rem;
+}
+
+.main--white {
+    background-color: $white;
+}
+
+// margin and padding bootstrap (mt-3, mb-4...)
 $spacer: 1.6rem;
 
 /* Bootstrap */
@@ -97,9 +108,8 @@ $spacer: 1.6rem;
 @import "blocks/breadcrumb";
 @import "blocks/pagination";
 @import "blocks/form";
+@import "blocks/map";
 
 a {
     color: var(--c, $green);
 }
-
-// color: $green;
