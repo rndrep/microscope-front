@@ -3,22 +3,22 @@
 }
 
 .rock__card {
-    padding: 0 3.2rem;
+    padding: 0 3.2rem 1.6rem;
 
     background-color: $white;
 }
 
 .rock__top {
     display: flex;
-    border-bottom: 1px solid $green-100;
     justify-content: center;
+    margin: 0;
+
+    padding: 1.6rem 0;
 }
 
 .rock__img {
     display: flex;
     justify-content: center;
-
-    margin: 1.6rem 0;
 
     border-right: 1px solid #c5eaa185;
 
@@ -28,7 +28,6 @@
 }
 
 .rock__info {
-    margin: 1.6rem 0;
     padding-right: 3rem;
     padding-left: 0;
 
@@ -53,10 +52,12 @@
 
 .rock__main {
     margin: 0;
+    padding: 1.6rem 0;
+
+    border-top: 1px solid $green-100;
 }
 
 .rock__details {
-    margin: 1.6rem 0;
     padding-left: 3rem;
     padding-right: 1.6rem;
 

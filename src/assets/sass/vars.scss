@@ -78,12 +78,16 @@ $pagination-color: $green;
 $pagination-bg: $white;
 $pagination-active-color: $white;
 $pagination-active-bg: $green;
-
 $pagination-hover-color: $green;
 
 // Inputs
 $input-btn-focus-color: $green-100;
 $input-focus-border-color: $green-200;
+
+// Accordion
+$accordion-button-active-bg: $gray-light;
+$accordion-button-active-color: $green;
+$accordion-icon-color: $green;
 
 // grid-breakpoints
 $breakpoints_xs: 0; // 0-576px

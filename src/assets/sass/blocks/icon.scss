@@ -17,3 +17,8 @@
     height: calc(min(70vw, 56px));
     width: calc(min(70vw, 240px));
 }
+
+.btn .icon,
+.accordion-button .icon {
+    margin-right: 0.8rem;
+}

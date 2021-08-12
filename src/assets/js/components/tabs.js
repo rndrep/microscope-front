@@ -13,3 +13,11 @@ L.tileLayer(
             "pk.eyJ1IjoidnZrNjEiLCJhIjoiY2tzNXgyMTZrMDViaTJ1cHNxbDhsbXhzcyJ9.me3r1SBREWSOPn_A3Nx5yQ",
     }
 ).addTo(mymap);
+
+initialize_map();
+$("#map").on("hidden.bs.collapse", function () {
+    initialize_map();
+});
+$("#map").on("shown.bs.collapse", function () {
+    initialize_map();
+});

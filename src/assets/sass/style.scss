@@ -7,18 +7,6 @@ html {
 }
 
 /* Default styles */
-body {
-    margin: 0;
-
-    background-color: #f0f0f0;
-
-    font-size: 1.6rem;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-        Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
-        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    line-height: 1.5;
-    color: $gray;
-}
 
 .page {
     overflow: hidden;
@@ -109,6 +97,20 @@ $spacer: 1.6rem;
 @import "blocks/pagination";
 @import "blocks/form";
 @import "blocks/map";
+@import "blocks/accordion";
+@import "blocks/carousel";
+
+body {
+    margin: 0;
+
+    background-color: #f0f0f0;
+
+    font-size: 1.6rem;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+        Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    line-height: 1.5;
+}
 
 a {
     color: var(--c, $green);
