@@ -5,6 +5,8 @@
 .rock__card {
     padding: 0 3.2rem 1.6rem;
 
+    border-radius: $radius;
+    box-shadow: $shadow;
     background-color: $white;
 }
 
@@ -24,6 +26,8 @@
 
     @media (max-width: 576px), (max-width: 768px) {
         border: none;
+
+        margin-bottom: 1.6rem;
     }
 }
 

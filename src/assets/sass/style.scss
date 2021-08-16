@@ -98,7 +98,11 @@ $spacer: 1.6rem;
 @import "blocks/form";
 @import "blocks/map";
 @import "blocks/accordion";
-@import "blocks/carousel";
+@import "blocks/gallery";
+@import "blocks/video";
+
+/* Vendor libs */
+@import "vendor/slick";
 
 body {
     margin: 0;
