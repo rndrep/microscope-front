@@ -26,6 +26,7 @@ var path = {
         css: "dist/assets/css/",
         images: "dist/assets/img/",
         svg: "dist/assets/sprite/",
+        video: "dist/assets/video/",
     },
     src: {
         html: "src/*.html",
@@ -33,6 +34,7 @@ var path = {
         css: "src/assets/sass/style.scss",
         images: "src/assets/img/**/*.{jpg,png,svg,gif,ico}",
         svg: "src/assets/svg/**/*.svg",
+        video: "src/assets/video/*.mp4",
     },
     watch: {
         html: "src/**/*.html",
@@ -40,6 +42,7 @@ var path = {
         css: "src/assets/sass/**/*.scss",
         images: "src/assets/img/**/*.{jpg,png,svg,gif,ico}",
         svg: "src/assets/svg/**/*.svg",
+        video: "src/assets/video/*.mp4",
     },
     clean: "./dist",
 };
@@ -150,6 +153,10 @@ function svg() {
     return src(path.src.svg).pipe(svgSprite(config)).pipe(dest(path.build.svg));
 }
 
+function video() {
+    return src(path.src.video).pipe(dest(path.build.video));
+}
+
 function clean() {
     return del(path.clean);
 }
@@ -161,9 +168,13 @@ function watchFiles() {
     gulp.watch([path.watch.js], js);
     gulp.watch([path.watch.images], images);
     gulp.watch([path.watch.svg], svg);
+    gulp.watch([path.watch.video], video);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, images, svg)); // для выполнения всех тасков
+const build = gulp.series(
+    clean,
+    gulp.parallel(html, css, js, images, svg, video)
+); // для выполнения всех тасков
 const watch = gulp.parallel(build, watchFiles, browserSync);
 
 /* Exports Tasks */
@@ -172,6 +183,7 @@ exports.css = css;
 exports.js = js;
 exports.images = images;
 exports.svg = svg;
+exports.video = video;
 exports.clean = clean;
 exports.build = build;
 exports.watch = watch;
