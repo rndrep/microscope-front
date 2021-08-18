@@ -31,6 +31,10 @@
         }
     }
 
+    &--green {
+        color: $white;
+    }
+
     @media (max-width: $breakpoints_xl) {
         padding: 0.8rem 1.6rem;
     }
@@ -73,10 +77,6 @@
             margin-bottom: 3.2rem;
         }
     }
-}
-
-.btn--green {
-    color: $white;
 }
 
 .btn_intro {

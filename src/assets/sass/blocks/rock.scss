@@ -48,10 +48,10 @@
     margin-bottom: 0.8rem;
 
     font-size: 1.6rem;
-}
 
-.rock__text--gray {
-    color: $gray-500;
+    &--gray {
+        color: $gray-500;
+    }
 }
 
 .rock__main {

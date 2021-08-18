@@ -1,11 +1,15 @@
-$("#gallery").slick({
+var gallery = $("#gallery");
+
+gallery.slick({
     // normal options...
-    arrows: true,
+    arrows: false,
     dots: true,
     speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: false,
+    adaptiveHeight: true,
+    infinite: true,
 
     // // the magic
     // responsive: [
@@ -28,4 +32,14 @@ $("#gallery").slick({
     //         settings: "unslick", // destroys slick
     //     },
     // ],
+});
+
+$("#gallery-arrow-prev").on("click", function (event) {
+    event.preventDefault();
+    gallery.slick("slickPrev");
+});
+
+$("#gallery-arrow-next").on("click", function (event) {
+    event.preventDefault();
+    gallery.slick("slickNext");
 });
