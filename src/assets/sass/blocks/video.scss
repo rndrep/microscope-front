@@ -1,16 +1,18 @@
 .video {
-    width: 400px;
+    width: 540px;
 
     margin: 0 auto;
 }
 
 .video__item {
     position: relative;
-    aspect-ratio: 16/9;
+    padding: 0 0 50% 0;
+    margin: 0 0 1.6rem;
 }
 
 .video__item video {
     position: absolute;
+    object-fit: cover;
     top: 0;
     left: 0;
     width: 100%;

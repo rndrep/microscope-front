@@ -12,3 +12,10 @@
     display: flex;
     justify-content: center;
 }
+
+.accordion-item__map > .collapse:not(.show) {
+    /* display: none; */
+    display: block;
+    visibility: hidden;
+    height: 0px;
+}

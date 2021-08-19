@@ -29,6 +29,7 @@
         }
     }
 }
+
 .gallery__item {
     max-height: 540px;
     position: relative;
@@ -44,12 +45,17 @@
 .gallery__arrow {
     padding: 0;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+
     text-decoration: none;
     cursor: pointer;
-
-    position: absolute;
-    top: 50%;
-    z-index: 2;
 
     &:hover {
         .gallery__arrow-icon {
@@ -58,17 +64,18 @@
     }
 
     &--prev {
-        left: -3.2rem;
-        transform: translateY(-50%) rotate(-180deg);
+        left: 0;
+        transform: rotate(-180deg);
     }
 
     &--next {
-        right: -3.2rem;
-        transform: translateY(-50%);
+        right: 0;
     }
 }
 
 .gallery__arrow-icon {
+    width: 3.2rem;
+    height: 3.2rem;
     fill: $gray-500;
     transition: fill 0.1s linear;
 }
