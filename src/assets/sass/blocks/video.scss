@@ -10,7 +10,8 @@
     margin: 0 0 1.6rem;
 }
 
-.video__item video {
+.video__item video,
+.video__item iframe {
     position: absolute;
     object-fit: cover;
     top: 0;
