@@ -109,14 +109,16 @@
 }
 
 .btn_nav {
-    @media (min-width: 375px) and (max-width: $breakpoints_lg) {
-        font-size: 0;
+    align-self: center;
+
+    @media (min-width: $breakpoints_xs) and (max-width: $breakpoints_xm) {
+        // font-size: 0;
         .icon {
             margin: 0;
         }
     }
 
-    @media (max-width: 375px) {
+    @media (max-width: $breakpoints_xm) {
         width: 100%;
     }
 }

@@ -1,6 +1,6 @@
 var gallery = $("#gallery");
 
-gallery.slick({
+gallery.not(".slick-initialized").slick({
     // normal options...
     arrows: false,
     dots: true,

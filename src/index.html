@@ -43,151 +43,373 @@ title: Home
 <div class="search">
     <div class="container">
         <h1 class="search__title">Поиск по фильтрам</h1>
-        <form class="search-form">
-            <div
-                class="
-                    search__fields
-                    row row-cols-1 row-cols-md-2 row-cols-lg-3
-                "
-            >
-                <div class="col">
-                    <label for="searchform-name" class="form-label"
-                        >Название</label
+        <div class="tabs">
+            <ul class="nav nav-tabs tabs__nav" id="myTab" role="tablist">
+                <!-- Rocks tab -->
+                <li class="nav-item" role="presentation">
+                    <button
+                        class="tabs__link nav-link active"
+                        id="rocksTab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#rocksTabContent"
+                        type="button"
+                        role="tab"
+                        aria-controls="rocksTabContent"
+                        aria-selected="true"
                     >
-                    <input
-                        type="text"
-                        class="form-control"
-                        id="searchform-name"
-                    />
+                        Породы
+                    </button>
+                </li>
+
+                <!-- Minerals tab -->
+                <li class="nav-item" role="presentation">
+                    <button
+                        class="tabs__link nav-link"
+                        id="mineralsTab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#mineralsTabContent"
+                        type="button"
+                        role="tab"
+                        aria-controls="mineralsTabContent"
+                        aria-selected="false"
+                    >
+                        Минералы
+                    </button>
+                </li>
+
+                <!-- Fossils tab -->
+                <li class="nav-item" role="presentation">
+                    <button
+                        class="tabs__link nav-link"
+                        id="fossilsTab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#fossilsTabContent"
+                        type="button"
+                        role="tab"
+                        aria-controls="fossilsTabContent"
+                        aria-selected="false"
+                    >
+                        Окаменелости
+                    </button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <!-- Rocks tab content -->
+                <div
+                    class="tab-pane fade show active"
+                    id="rocksTabContent"
+                    role="tabpanel"
+                    aria-labelledby="rocksTab"
+                >
+                    <!-- Rock search-form -->
+                    <form class="search-form">
+                        <div
+                            class="
+                                search__fields
+                                row row-cols-1 row-cols-md-2 row-cols-lg-3
+                            "
+                        >
+                            <div class="col">
+                                <label for="searchform-name" class="form-label"
+                                    >Название</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="searchform-name"
+                                />
+                            </div>
+                            <div class="col">
+                                <label for="searchform-name" class="form-label"
+                                    >Описание</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="searchform-name"
+                                />
+                            </div>
+                            <div class="col">
+                                <label class="form-label" for="searchform-type"
+                                    >Тип</label
+                                >
+                                <select
+                                    class="form-select"
+                                    id="searchform-type"
+                                    aria-label="Default select example"
+                                >
+                                    <option selected>-</option>
+                                    <option value="1">магматический</option>
+                                    <option value="2">метаморфический</option>
+                                    <option value="3">осадочный</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label class="form-label" for="searchform-type"
+                                    >Класс</label
+                                >
+                                <select
+                                    class="form-select"
+                                    id="searchform-type"
+                                    aria-label="Default select example"
+                                >
+                                    <option selected>-</option>
+                                    <option value="1">плутонический</option>
+                                    <option value="2">вулканический</option>
+                                    <option value="3">гипабиссальный</option>
+                                    <option value="4">контактовый</option>
+                                    <option value="5">региональный</option>
+                                    <option value="6">обломочный</option>
+                                    <option value="7">хемогенный</option>
+                                    <option value="8">органогенный</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label class="form-label" for="searchform-type"
+                                    >Вид</label
+                                >
+                                <select
+                                    class="form-select"
+                                    id="searchform-type"
+                                    aria-label="Default select example"
+                                >
+                                    <option selected>-</option>
+                                    <option value="1">гранит</option>
+                                    <option value="2">риолит</option>
+                                    <option value="3">гранит-порфир</option>
+                                    <option value="4">
+                                        роговик хистатолитовый
+                                    </option>
+                                    <option value="5">гнейс биотитовый</option>
+                                    <option value="6">гнейс биотитовый</option>
+                                    <option value="7">эклогит</option>
+                                    <option value="8">
+                                        псаммитолиты (песчаные)
+                                    </option>
+                                    <option value="9">
+                                        пелитолиты (глинистые)
+                                    </option>
+                                    <option value="10">алюминиевый</option>
+                                    <option value="11">карбонатный</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label class="form-label" for="searchform-type"
+                                    >Текстура
+                                </label>
+                                <select
+                                    class="form-select"
+                                    id="searchform-type"
+                                    aria-label="Default select example"
+                                >
+                                    <option selected>-</option>
+                                    <option value="1">массивная</option>
+                                    <option value="2">пятнистая</option>
+                                    <option value="3">гнейсовидная</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label class="form-label" for="searchform-type"
+                                    >Породообразующие минералы
+                                </label>
+                                <select
+                                    class="form-select"
+                                    id="searchform-type"
+                                    aria-label="Default select example"
+                                >
+                                    <option selected>-</option>
+                                    <option value="1">Кварц</option>
+                                    <option value="2">
+                                        калиевый полевой шпат
+                                    </option>
+                                    <option value="3">плагиоклаз</option>
+                                    <option value="4">биотит</option>
+                                    <option value="5">полевые шпаты</option>
+                                    <option value="6">биотит</option>
+                                    <option value="7">слюда</option>
+                                </select>
+                            </div>
+
+                            <div class="col">
+                                <label class="form-label" for="searchform-type"
+                                    >Вторичные минералы
+                                </label>
+                                <select
+                                    class="form-select"
+                                    id="searchform-type"
+                                    aria-label="Default select example"
+                                >
+                                    <option selected>-</option>
+                                    <option value="1">эпидот</option>
+                                    <option value="2">хлорит</option>
+                                    <option value="3">пелит</option>
+                                    <option value="4">хлорит</option>
+                                    <option value="5">серицит</option>
+                                    <option value="6">каолинит</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label class="form-label" for="searchform-type"
+                                    >Акцессорные минералы
+                                </label>
+                                <select
+                                    class="form-select"
+                                    id="searchform-type"
+                                    aria-label="Default select example"
+                                >
+                                    <option selected>-</option>
+                                    <option value="1">турмалин</option>
+                                    <option value="2">циркон</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="search__btn">
+                            <button id="rockSearchBtn" class="btn" type="submit">Найти</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="col">
-                    <label for="searchform-name" class="form-label"
-                        >Название</label
-                    >
-                    <input
-                        type="text"
-                        class="form-control"
-                        id="searchform-name"
-                    />
+
+                <!-- Minerals tab content -->
+                <div
+                    class="tab-pane fade"
+                    id="mineralsTabContent"
+                    role="tabpanel"
+                    aria-labelledby="mineralsTab"
+                >
+                    <!-- Minerals search-form -->
+                    <form class="search-form">
+                        <div
+                            class="
+                                search__fields
+                                row row-cols-1 row-cols-md-2 row-cols-lg-3
+                            "
+                        >
+                            <div class="col">
+                                <label for="searchform-name" class="form-label"
+                                    >Название</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="searchform-name"
+                                />
+                            </div>
+                            <div class="col">
+                                <label for="searchform-name" class="form-label"
+                                    >Форма выделения</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="searchform-name"
+                                />
+                            </div>
+                            <div class="col">
+                                <label class="form-label" for="searchform-type"
+                                    >Твердость</label
+                                >
+                                <select
+                                    class="form-select"
+                                    id="searchform-type"
+                                    aria-label="Default select example"
+                                >
+                                    <option selected>-</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label class="form-label" for="searchform-type"
+                                    >Класс</label
+                                >
+                                <select
+                                    class="form-select"
+                                    id="searchform-type"
+                                    aria-label="Default select example"
+                                >
+                                    <option selected>-</option>
+                                    <option value="1">плутонический</option>
+                                    <option value="2">вулканический</option>
+                                    <option value="3">гипабиссальный</option>
+                                    <option value="4">контактовый</option>
+                                    <option value="5">региональный</option>
+                                    <option value="6">обломочный</option>
+                                    <option value="7">хемогенный</option>
+                                    <option value="8">органогенный</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="search__btn">
+                            <button id="mineralsSearchBtn" class="btn" type="submit">Найти</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="col">
-                    <label class="form-label" for="searchform-type">Тип</label>
-                    <select
-                        class="form-select"
-                        id="searchform-type"
-                        aria-label="Default select example"
-                    >
-                        <option selected>Выбрать</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <label class="form-label" for="searchform-type">Тип</label>
-                    <select
-                        class="form-select"
-                        id="searchform-type"
-                        aria-label="Default select example"
-                    >
-                        <option selected>Выбрать</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <label class="form-label" for="searchform-type">Тип</label>
-                    <select
-                        class="form-select"
-                        id="searchform-type"
-                        aria-label="Default select example"
-                    >
-                        <option selected>Выбрать</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <label class="form-label" for="searchform-type">Тип</label>
-                    <select
-                        class="form-select"
-                        id="searchform-type"
-                        aria-label="Default select example"
-                    >
-                        <option selected>Выбрать</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <label class="form-label" for="searchform-type">Тип</label>
-                    <select
-                        class="form-select"
-                        id="searchform-type"
-                        aria-label="Default select example"
-                    >
-                        <option selected>Выбрать</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <label class="form-label" for="searchform-type">Тип</label>
-                    <select
-                        class="form-select"
-                        id="searchform-type"
-                        aria-label="Default select example"
-                    >
-                        <option selected>Выбрать</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <label class="form-label" for="searchform-type">Тип</label>
-                    <select
-                        class="form-select"
-                        id="searchform-type"
-                        aria-label="Default select example"
-                    >
-                        <option selected>Выбрать</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
+
+                <!-- Fossils tab content -->
+                <div
+                    class="tab-pane fade"
+                    id="fossilsTabContent"
+                    role="tabpanel"
+                    aria-labelledby="fossilsTab"
+                >
+                    <!-- Fossils search-form -->
+                    <form class="search-form">
+                        <div
+                            class="
+                                search__fields
+                                row row-cols-1 row-cols-md-2 row-cols-lg-3
+                            "
+                        >
+                            <div class="col">
+                                <label for="searchform-name" class="form-label"
+                                    >Название</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="searchform-name"
+                                />
+                            </div>
+                        </div>
+                        <div class="search__btn">
+                            <button id="btnSearchBtn" class="btn" type="submit">Найти</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="search__btn">
-                <button class="btn" type="submit">Найти</button>
-            </div>
-        </form>
+        </div>
     </div>
 </div>
-<!-- ./ Search -->
+    <!-- ./ Search -->
 
-{{> cards}}
+    {{> cards}}
 
-<!-- Pagination -->
-<nav aria-label="Навигация">
-    <ul class="pagination">
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
-    </ul>
-</nav>
-<!-- ./ Pagination -->
+    <!-- Pagination -->
+    <nav aria-label="Навигация">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- ./ Pagination -->
+</div>

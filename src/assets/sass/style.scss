@@ -9,6 +9,7 @@ html {
 /* Default styles */
 
 .page {
+    padding-top: 8.8rem;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -100,6 +101,7 @@ $spacer: 1.6rem;
 @import "blocks/gallery";
 @import "blocks/video";
 @import "blocks/microscope";
+@import "blocks/tabs";
 
 /* Vendor libs */
 @import "vendor/slick";

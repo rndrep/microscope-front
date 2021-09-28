@@ -1,6 +1,11 @@
 .form-label {
-    color: $gray;
+    color: $gray-700;
     font-weight: 500;
+}
+
+.form-control,
+.form-select {
+    color: $gray-700;
 }
 
 .form-select {

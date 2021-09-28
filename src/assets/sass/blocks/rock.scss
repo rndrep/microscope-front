@@ -8,6 +8,10 @@
     border-radius: $radius;
     box-shadow: $shadow;
     background-color: $white;
+
+    @media (max-width: $breakpoints_xm) {
+        padding: 1.6rem 0.8rem;
+    }
 }
 
 .rock__top {
@@ -50,7 +54,7 @@
     font-size: 1.6rem;
 
     &--gray {
-        color: $gray-500;
+        color: $gray;
     }
 }
 

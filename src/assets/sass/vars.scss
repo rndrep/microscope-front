@@ -12,7 +12,7 @@ $gray-700: #495057;
 $gray-800: #343a40;
 $gray-900: #212529;
 
-$gray: #adb5bd;
+$gray: $gray-500;
 $black: #262626;
 // gray-color-variables
 
@@ -22,7 +22,7 @@ $grays: (
     "200": $gray-200,
     "300": $gray-300,
     "400": $gray-400,
-    "500": $gray-500,
+    "500": $gray,
     "600": $gray-600,
     "700": $gray-700,
     "800": $gray-800,
@@ -94,8 +94,13 @@ $accordion-button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/20
 $accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#{$accordion-icon-active-color}'><path d='M24 24H0V0h24v24z' fill='none' opacity='.87'/><path d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z'/></svg>");
 $accordion-icon-color: $green;
 
+// Tabs
+$nav-tabs-border-color: $gray-400;
+$nav-tabs-link-active-bg: $white;
+$nav-tabs-link-active-border-color: $gray-400 $gray-400 $nav-tabs-link-active-bg;
+
 // grid-breakpoints
-$breakpoints_xs: 0; // 0-576px
+$breakpoints_xs: 375px; // 0-576px
 $breakpoints_xm: 432px; // 435px-576
 $breakpoints_sm: 576px; // 576px-768
 $breakpoints_md: 768px; // 768px-992

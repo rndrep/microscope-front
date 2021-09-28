@@ -1,5 +1,4 @@
 .gallery {
-    margin: 0 2.8rem;
     position: relative;
 }
 
@@ -76,6 +75,6 @@
 .gallery__arrow-icon {
     width: 3.2rem;
     height: 3.2rem;
-    fill: $gray-500;
+    fill: $gray;
     transition: fill 0.1s linear;
 }
