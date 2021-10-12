@@ -1,4 +1,7 @@
 .form-label {
+    display: block;
+    margin: 0;
+
     color: $gray-700;
     font-weight: 500;
 }
@@ -6,6 +9,7 @@
 .form-control,
 .form-select {
     color: $gray-700;
+    margin: 0.4rem 0 0;
 }
 
 .form-select {
