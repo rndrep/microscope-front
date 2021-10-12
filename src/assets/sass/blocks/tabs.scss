@@ -12,6 +12,7 @@
 
     font-weight: 600;
 
+    // font-size: 1.6rem;
     @include fluidFontSize(1.4rem, 1.6rem, 480px, 1280px, 1.5rem);
     text-transform: uppercase;
 

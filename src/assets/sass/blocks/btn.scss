@@ -71,12 +71,6 @@
             fill: $white;
         }
     }
-
-    @media (max-width: $breakpoints_md) {
-        &:last-child() {
-            margin-bottom: 3.2rem;
-        }
-    }
 }
 
 .btn_intro {

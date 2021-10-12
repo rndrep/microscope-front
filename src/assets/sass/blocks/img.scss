@@ -1,14 +1,10 @@
 .img {
     display: block;
-    max-width: 60%;
+    max-width: 90%;
     max-height: 300px;
     margin: auto;
 
     @media (max-width: $breakpoints_md) {
-        max-width: 80%;
-    }
-
-    @media (max-width: 425px) {
         max-width: 100%;
     }
 }

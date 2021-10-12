@@ -3,11 +3,13 @@
 
     *:last-child {
         padding: 0;
+        margin: 0;
     }
 }
 
 .card-list li {
-    padding: 0.8rem 0rem;
+    padding: 0 0 0.8rem;
+    margin: 0 0 0.8rem;
 }
 
 .card-list__link {

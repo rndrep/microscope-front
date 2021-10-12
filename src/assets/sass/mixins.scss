@@ -17,7 +17,7 @@
     @return $number;
 }
 
-@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: rem) {
     $f-min: strip-unit($f-min);
     $f-max: strip-unit($f-max);
     $w-min: strip-unit($w-min);
@@ -38,7 +38,7 @@
         @if ($fallback) {
             font-size: $fallback;
         }
-        font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);
+        font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, rem);
     }
     @media (min-width: $w-max) {
         font-size: $f-max;
