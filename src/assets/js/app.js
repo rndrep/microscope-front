@@ -1,5 +1,6 @@
 //= ../../../node_modules/slick-carousel/slick/slick.js
 //= components/map.js
+//= components/microscope.js
 
 $(function () {});
 
