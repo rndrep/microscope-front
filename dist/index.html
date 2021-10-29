@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow, noodp" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="description" content="Цифровая коллекция" />
+    <meta
+        name="keywords"
+        content="цифровой микроскоп, микроскоп, порода, минералы, окаменелости "
+    />
+    
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- <title>Home</title> -->
+    
+    <!-- style.css -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""
+    />
+  </head>
+  <body>
+    <div class="page">
+      <!-- Navbar -->
+      <nav class="navbar fixed-top navbar-expand-md">
+          <div class="container">
+              <a class="navbar-brand navbar__brand" href="#">
+                  <svg class="icon_logo">
+                      <use href="/assets/sprite/sprite.svg#logo"></use>
+                  </svg>
+              </a>
+      
+              <button
+                  class="navbar-toggler btn"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbar-nav"
+                  aria-controls="navbar-nav"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+              >
+                  <span class="navbar-toggler-icon">
+                      <svg class="icon">
+                          <use href="/assets/sprite/sprite.svg#menu"></use>
+                      </svg>
+                  </span>
+              </button>
+      
+              <div class="collapse navbar-collapse navbar__collapse" id="navbar-nav">
+                  <div class="navbar-nav nav">
+                      <a class="nav-link nav__link" aria-current="page" href="#"
+                          >Главная</a
+                      >
+                      <a class="nav-link nav__link active" href="#">Изучение</a>
+                      <a class="nav-link nav__link" href="#">О нас</a>
+      
+                      <a class="btn btn_nav" href="">
+                          <svg class="icon">
+                              <use href="/assets/sprite/sprite.svg#login"></use>
+                          </svg>
+                          Войти</a
+                      >
+                  </div>
+              </div>
+          </div>
+      </nav>
+      <!-- /.Navbar -->
+      <!-- content -->
+      
+      <!-- Intro -->
+      <section class="intro">
+          <div class="container">
+              <!-- intro__inner -->
+              <div class="intro__inner row">
+                  <div class="col-md-8 p-0">
+                      <h1 class="intro__title">Цифровая коллекция</h1>
+                      <h2 class="intro__subtitle">
+                          Ищите образцы горных пород в наших коллекциях, используя
+                          параметры поиска или интерактивную карту.
+                      </h2>
+                      <div class="intro__btn">
+                          <a class="btn btn_intro" href="#">
+                              <svg class="icon icon--white">
+                                  <use href="/assets/sprite/sprite.svg#search"></use>
+                              </svg>
+                              Поиск</a
+                          >
+                          <a class="btn btn_intro" href="#">
+                              <svg class="icon icon--white">
+                                  <use
+                                      href="/assets/sprite/sprite.svg#location"
+                                  ></use>
+                              </svg>
+                              Карта</a
+                          >
+                      </div>
+                  </div>
+              </div>
+              <!-- ./ intro__inner -->
+          </div>
+      </section>
+      <!-- ./ Intro -->
+      
+      <!-- Breadcrumb -->
+      <div class="container">
+          <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                      <a href="#"> Изучение</a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">Поиск</li>
+              </ol>
+          </nav>
+      </div>
+      <!-- ./ Breadcrumb -->
+      
+      <!-- Search -->
+      <div class="search">
+          <div class="container">
+              <h1 class="search__title">Поиск по фильтрам</h1>
+              <div class="tabs">
+                  <ul class="nav nav-tabs tabs__nav" id="myTab" role="tablist">
+                      <!-- Rocks tab -->
+                      <li class="nav-item" role="presentation">
+                          <button
+                              class="tabs__link nav-link active"
+                              id="rocksTab"
+                              data-bs-toggle="tab"
+                              data-bs-target="#rocksTabContent"
+                              type="button"
+                              role="tab"
+                              aria-controls="rocksTabContent"
+                              aria-selected="true"
+                          >
+                              Породы
+                          </button>
+                      </li>
+      
+                      <!-- Minerals tab -->
+                      <li class="nav-item" role="presentation">
+                          <button
+                              class="tabs__link nav-link"
+                              id="mineralsTab"
+                              data-bs-toggle="tab"
+                              data-bs-target="#mineralsTabContent"
+                              type="button"
+                              role="tab"
+                              aria-controls="mineralsTabContent"
+                              aria-selected="false"
+                          >
+                              Минералы
+                          </button>
+                      </li>
+      
+                      <!-- Fossils tab -->
+                      <li class="nav-item" role="presentation">
+                          <button
+                              class="tabs__link nav-link"
+                              id="fossilsTab"
+                              data-bs-toggle="tab"
+                              data-bs-target="#fossilsTabContent"
+                              type="button"
+                              role="tab"
+                              aria-controls="fossilsTabContent"
+                              aria-selected="false"
+                          >
+                              Окаменелости
+                          </button>
+                      </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                      <!-- Rocks tab content -->
+                      <div
+                          class="tab-pane fade show active"
+                          id="rocksTabContent"
+                          role="tabpanel"
+                          aria-labelledby="rocksTab"
+                      >
+                          <!-- Rock search-form-->
+                          <form>
+                              <div
+                                  class="
+                                      search__fields
+                                      row row-cols-1 row-cols-md-2 row-cols-lg-3
+                                  "
+                              >
+                                  <!-- Отряд -->
+                                  <div class="col">
+                                      <label class="form-label"
+                                          >Название
+                                          <input type="text" class="form-control"
+                                      /></label>
+                                  </div>
+                                  <!-- Описание -->
+                                  <div class="col">
+                                      <label class="form-label"
+                                          >Описание
+                                          <input type="text" class="form-control"
+                                      /></label>
+                                  </div>
+                                  <!-- Тип -->
+                                  <div class="col">
+                                      <label class="form-label"
+                                          >Тип
+                                          <select class="form-select">
+                                              <option selected>-</option>
+                                              <option value="1">магматический</option>
+                                              <option value="2">
+                                                  метаморфический
+                                              </option>
+                                              <option value="3">осадочный</option>
+                                          </select>
+                                      </label>
+                                  </div>
+                                  <!-- Класс -->
+                                  <div class="col">
+                                      <label class="form-label"
+                                          >Класс
+                                          <select class="form-select">
+                                              <option selected>-</option>
+                                              <option value="1">плутонический</option>
+                                              <option value="2">вулканический</option>
+                                              <option value="3">
+                                                  гипабиссальный
+                                              </option>
+                                              <option value="4">контактовый</option>
+                                              <option value="5">региональный</option>
+                                              <option value="6">обломочный</option>
+                                              <option value="7">хемогенный</option>
+                                              <option value="8">органогенный</option>
+                                          </select>
+                                      </label>
+                                  </div>
+                                  <!-- Отряд -->
+                                  <div class="col">
+                                      <label class="form-label"
+                                          >Отряд
+                                          <select class="form-select">
+                                              <option selected>-</option>
+                                              <option value="1">
+                                                  ультраосновной
+                                              </option>
+                                              <option value="2">основной</option>
+                                              <option value="3">средний</option>
+                                              <option value="4">кислый</option>
+                                          </select></label
+                                      >
+                                  </div>
+                                  <!-- Вид -->
+                                  <div class="col">
+                                      <label class="form-label"
+                                          >Вид
+                                          <select class="form-select">
+                                              <option selected>-</option>
+                                              <option value="1">гранит</option>
+                                              <option value="2">риолит</option>
+                                              <option value="3">гранит-порфир</option>
+                                              <option value="4">
+                                                  роговик хистатолитовый
+                                              </option>
+                                              <option value="5">
+                                                  гнейс биотитовый
+                                              </option>
+                                              <option value="6">
+                                                  гнейс биотитовый
+                                              </option>
+                                              <option value="7">эклогит</option>
+                                              <option value="8">
+                                                  псаммитолиты (песчаные)
+                                              </option>
+                                              <option value="9">
+                                                  пелитолиты (глинистые)
+                                              </option>
+                                              <option value="10">алюминиевый</option>
+                                              <option value="11">карбонатный</option>
+                                          </select></label
+                                      >
+                                  </div>
+                                  <!-- Породообразующие минералы -->
+                                  <div class="col">
+                                      <label class="form-label"
+                                          >Породообразующие минералы
+                                          <select class="form-select">
+                                              <option selected>-</option>
+                                              <option value="1">оливин</option>
+                                              <option value="2">пироксен</option>
+                                              <option value="3">ортопироксен</option>
+                                          </select></label
+                                      >
+                                  </div>
+                              </div>
+                              <div class="search__btn">
+                                  <button
+                                      id="rockSearchBtn"
+                                      class="btn"
+                                      type="submit"
+                                  >
+                                      Найти
+                                  </button>
+                              </div>
+                          </form>
+                      </div>
+      
+                      <!-- Minerals tab content -->
+                      <div
+                          class="tab-pane fade"
+                          id="mineralsTabContent"
+                          role="tabpanel"
+                          aria-labelledby="mineralsTab"
+                      >
+                          <!-- Minerals search-form-->
+                          <form>
+                              <div
+                                  class="
+                                      search__fields
+                                      row row-cols-1 row-cols-md-2 row-cols-lg-3
+                                  "
+                              >
+                                  <!-- Название минерала -->
+                                  <div class="col">
+                                      <label class="form-label"
+                                          >Название
+                                          <input type="text" class="form-control" />
+                                      </label>
+                                  </div>
+                                  <!-- Описание минерала -->
+                                  <div class="col">
+                                      <label class="form-label"
+                                          >Описание
+                                          <input type="text" class="form-control"
+                                      /></label>
+                                  </div>
+                                  <!-- Твердость минерала -->
+                                  <div class="col">
+                                      <label class="form-label"
+                                          >Твердость 1-10
+                                          <input type="text" class="form-control"
+                                      /></label>
+                                  </div>
+                                  <!-- Поиск по породе -->
+                                  <div class="col">
+                                      <label class="form-label"
+                                          >Генезис
+                                          <select class="form-select">
+                                              <option selected>-</option>
+                                              <option value="1">оливинит</option>
+                                              <option value="2">пироксенит</option>
+                                              <option value="3">габро</option>
+                                          </select></label
+                                      >
+                                  </div>
+                              </div>
+                              <div class="search__btn">
+                                  <button
+                                      id="mineralsSearchBtn"
+                                      class="btn"
+                                      type="submit"
+                                  >
+                                      Найти
+                                  </button>
+                              </div>
+                          </form>
+                      </div>
+      
+                      <!-- Fossils tab content -->
+                      <div
+                          class="tab-pane fade"
+                          id="fossilsTabContent"
+                          role="tabpanel"
+                          aria-labelledby="fossilsTab"
+                      >
+                          <!-- Fossils search-form-->
+                          <form>
+                              <div
+                                  class="
+                                      search__fields
+                                      row row-cols-1 row-cols-md-2 row-cols-lg-3
+                                  "
+                              >
+                                  <!-- Название окаменелости -->
+                                  <div class="col">
+                                      <label class="form-label"
+                                          >Название
+                                          <input type="text" class="form-control"
+                                      /></label>
+                                  </div>
+                                  <!-- Поиск по породе -->
+                                  <div class="col">
+                                      <label class="form-label"
+                                          >Генезис
+                                          <select class="form-select">
+                                              <option selected>-</option>
+                                              <option value="1">оливинит</option>
+                                              <option value="2">пироксенит</option>
+                                              <option value="3">габро</option>
+                                          </select></label
+                                      >
+                                  </div>
+                              </div>
+                              <div class="search__btn">
+                                  <button id="btnSearchBtn" class="btn" type="submit">
+                                      Найти
+                                  </button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- ./ Search -->
+      
+      <!-- Cards -->
+      <section class="cards">
+      	<div class="container">
+      		<!-- cards__row -->
+      		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+      			<div class="col">
+      				<div class="card">
+      					<!-- card__thumb -->
+      					<a class="card__thumb" href="#">
+      						<img class="card__img" src="/assets/img/stone2.png" alt="" />
+      						<h3 class="card__title">Эпигранит</h3>
+      					</a>
+      					<!-- ./ card__thumb -->
+      					<!-- card__body -->
+      					<div class="card__body">
+      						<div class="btn-group card__btn-group" role="group" aria-label="Basic outlined example">
+      							<a class="btn btn_group"><svg class="icon" >
+      								<use href="/assets/sprite/sprite.svg#feed"></use>
+      							</svg></a>
+      							<a class="btn btn_group">
+      							<svg class="icon" >
+      								<use href="/assets/sprite/sprite.svg#feed"></use>
+      							</svg>
+      							</a>
+      							<a class="btn btn_group"><svg class="icon" >
+      								<use href="/assets/sprite/sprite.svg#360"></use>
+      							</svg></a>
+      						</div>
+      					</div>
+      					<!-- ./ card__body -->
+      				</div>
+      			</div>
+      
+      			<div class="col">
+      				<div class="card">
+      					<a class="card__thumb" href="#">
+      						<img class="card__img" src="/assets/img/stone.jpg" alt="" />
+      						<h3 class="card__title">Гранит</h3>
+      					</a>
+      					<div class="card__body">
+      						<div class="btn-group card__btn-group" role="group" aria-label="Basic outlined example">
+      							<a class="btn btn_group"><svg class="icon" >
+      								<use href="/assets/sprite/sprite.svg#biotech"></use>
+      							</svg></a>
+      							<a class="btn btn_group">
+      							<svg class="icon" >
+      								<use href="/assets/sprite/sprite.svg#feed"></use>
+      							</svg>
+      							</a>
+      							<a class="btn btn_group"><svg class="icon" >
+      								<use href="/assets/sprite/sprite.svg#360"></use>
+      							</svg></a>
+      						</div>
+      					</div>
+      				</div>
+      			</div>
+      
+      			<div class="col">
+      				<div class="card">
+      					<a class="card__thumb" href="#">
+      						<img class="card__img" src="/assets/img/Метеорит.png" alt="" />
+      						<h3 class="card__title">Метеорит</h3>
+      					</a>
+      					<div class="card__body">
+      						<div class="btn-group card__btn-group" role="group" aria-label="Basic outlined example">
+      							<a class="btn btn_group"><svg class="icon" >
+      								<use href="/assets/sprite/sprite.svg#biotech"></use>
+      							</svg></a>
+      							<a class="btn btn_group">
+      							<svg class="icon" >
+      								<use href="/assets/sprite/sprite.svg#feed"></use>
+      							</svg>
+      							</a>
+      							<a class="btn btn_group"><svg class="icon" >
+      								<use href="/assets/sprite/sprite.svg#360"></use>
+      							</svg></a>
+      						</div>
+      					</div>
+      				</div>
+      			</div>
+      
+      			<div class="col">
+      				<div class="card">
+      					<a class="card__thumb" href="#">
+      						<img class="card__img" src="/assets/img/Реголит.png" alt="" />
+      						<h3 class="card__title">Реголит</h3>
+      					</a>
+      					<div class="card__body">
+      						<div class="btn-group card__btn-group" role="group" aria-label="Basic outlined example">
+      							<a class="btn btn_group"><svg class="icon" >
+      								<use href="/assets/sprite/sprite.svg#biotech"></use>
+      							</svg></a>
+      							<a class="btn btn_group">
+      							<svg class="icon" >
+      								<use href="/assets/sprite/sprite.svg#feed"></use>
+      							</svg>
+      							</a>
+      							<a class="btn btn_group"><svg class="icon" >
+      								<use href="/assets/sprite/sprite.svg#360"></use>
+      							</svg></a>
+      						</div>
+      					</div>
+      				</div>
+      			</div>
+      			<div class="col">
+      				<div class="card">
+      					<a class="card__thumb" href="#">
+      						<img class="card__img" src="/assets/img/Андалузит.png" alt="" />
+      						<h3 class="card__title">Андалузит</h3>
+      					</a>
+      					<div class="card__body">
+      						<div class="btn-group card__btn-group" role="group" aria-label="Basic outlined example">
+      							<a class="btn btn_group"><svg class="icon" >
+      								<use href="/assets/sprite/sprite.svg#biotech"></use>
+      							</svg></a>
+      							<a class="btn btn_group">
+      							<svg class="icon" >
+      								<use href="/assets/sprite/sprite.svg#feed"></use>
+      							</svg>
+      							</a>
+      							<a class="btn btn_group"><svg class="icon" >
+      								<use href="/assets/sprite/sprite.svg#360"></use>
+      							</svg></a>
+      						</div>
+      					</div>
+      				</div>
+      			</div>
+      			<div class="col">
+      				<div class="card">
+      					<a class="card__thumb" href="#">
+      						<img class="card__img" src="/assets/img/Базальт.jpg" alt="" />
+      						<h3 class="card__title">Базальт</h3>
+      					</a>
+      					<div class="card__body">
+      						<div class="btn-group card__btn-group" role="group" aria-label="Basic outlined example">
+      							<a class="btn btn_group"><svg class="icon" >
+      								<use href="/assets/sprite/sprite.svg#biotech"></use>
+      							</svg></a>
+      							<a class="btn btn_group">
+      							<svg class="icon" >
+      								<use href="/assets/sprite/sprite.svg#feed"></use>
+      							</svg>
+      							</a>
+      							<a class="btn btn_group"><svg class="icon" >
+      								<use href="/assets/sprite/sprite.svg#360"></use>
+      							</svg></a>
+      						</div>
+      					</div>
+      				</div>
+      			</div>
+      			<!-- ./ Cards__row -->
+      	</div> 
+      </section> <!-- ./ Cards -->
+      
+      
+      <!-- Pagination -->
+      <nav aria-label="Навигация">
+          <ul class="pagination">
+              <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                  </a>
+              </li>
+              <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                  </a>
+              </li>
+          </ul>
+      </nav>
+      <!-- ./ Pagination -->
+      
+      <!-- footer -->
+      <footer class="footer">
+      	<div class="container">
+      		<div class="row footer__row">
+      			<div class="col-lg-12">
+      				<div class="footer__text">Национальный исследовательский Томский политехнический университет</div>
+      				<div class="footer__text">TPU © 2021</div>
+      			</div>
+      		</div>
+      	</div>
+      </footer>
+    </div>
+    <!-- js files -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+
+    <!-- Last call -->
+    <script src="assets/js/app.min.js"></script>
+  </body>
+</html>
