@@ -12,9 +12,10 @@
 	margin: 0 0 0.8rem;
 }
 
-.card-list__link {
+.card-list__link, .card-list__text {
 	padding: 0.8rem 0;
 
+	font-weight: 400;
 	@include link-hover($green);
 
 	&:after {
@@ -28,10 +29,14 @@
 	}
 }
 
-.card-list__link_disabled {
-	color: $black;
+.card-list__text {
 	text-decoration: none;
 	cursor: default;
 
-	@include link-hover($gray-600, $gray-600, none);
+	font-weight: 400;
+	@include link-hover($black, $black, none);
+}
+
+.card-list .list-group-item {
+	font-weight: 600;
 }

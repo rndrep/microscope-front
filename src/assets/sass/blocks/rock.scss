@@ -69,7 +69,13 @@
 	}
 }
 
-.rock__launch-btn {
+.rock__details_large {
+	padding: 0 1.6rem;
+
+	border: none;
+}
+
+.rock__launch-btns {
 	display: flex;
 	flex-direction: column;
 	align-content: center;
@@ -89,7 +95,7 @@
 
 .rock__title {
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 
 	margin-bottom: 1.6rem;
 }
