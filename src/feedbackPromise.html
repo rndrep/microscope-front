@@ -1,0 +1,105 @@
+<div class="content">
+	<div class="container">
+		<div class="row">
+			<div class="col"></div>
+			<div
+				class="
+					col
+					d-flex
+					flex-column
+					justify-content-center
+					content__text
+					text-center
+				"
+			>
+				<h1 class="content__title mb-3">Форма обратной связи</h1>
+				<form id="feedbackForm" action="">
+					<label class="form-label mb-3"
+						>Введите вашу почту:
+						<input class="form-control" name="email" type="text"
+					/></label>
+					<label class="form-label mb-3"
+						>Введите телефон:
+						<input class="form-control" name="phone" type="text"
+					/></label>
+					<button type="submit" class="btn">Отправить</button>
+				</form>
+			</div>
+			<div class="col"></div>
+		</div>
+	</div>
+</div>
+
+<script>
+	console.log("log");
+
+	let message = {
+		loading: "Загрузка",
+		succes: "Спасибо! Мы скоро свяжемся!",
+		failure: "Что-то не так...",
+	};
+
+	let form = document.querySelector("#feedbackForm"),
+		input = form.getElementsByTagName("input"),
+		statusMessage = document.createElement("div");
+
+	// statusMessage.classList.add("status"); добавление класса для стилизации
+	sendForm(form);
+
+	function sendForm(elem) {
+		elem.addEventListener("submit", function (event) {
+			// отменяем стандартное поведение браузера отправку по кнопке
+			event.preventDefault();
+
+			elem.appendChild(statusMessage);
+			let formData = new FormData(elem);
+
+			function postData(data) {
+				return new Promise(function (resolve, reject) {
+					let request = new XMLHttpRequest();
+					// указываем зачем и куда идет запрос
+					request.open("POST", "server.php");
+					// устанавливаем заголовки, что отправляется
+					/* request.setRequestHeader(
+               "Content-type",
+               "application/x-www-form-urlencoded"); */
+
+					// отправка в JSON формате
+					request.setRequestHeader(
+						"Content-type",
+						"application/json; charset=utf-8"
+					);
+
+					// после получения состояния запроса можем что-то сделать и вывести сообщение
+					request.onreadystatechange = function () {
+						if (request.readyState < 4) {
+							resolve();
+						} else if (request.readyState === 4) {
+							if (request.readyState === 200 && request.readyState < 3) {
+								resolve();
+							} else {
+								reject();
+							}
+						}
+					};
+
+					request.send(data);
+				});
+			} // End postData
+		});
+	}
+
+	function clearInput() {
+		for (let i = 0; i < input.length; i++) {
+			input[i].value = "";
+		}
+	}
+
+	postData(formData)
+		.then(() => (statusMessage.innerHTML = message.loading))
+		.then(() => {
+			statusMessage.innerHTML = message.succes;
+		})
+		.catch(() => (statusMessage.innerHTML = message.failure))
+		.then(clearInput);
+</script>
