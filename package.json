@@ -12,6 +12,7 @@
 	"devDependencies": {
 		"browser-sync": "^2.26.14",
 		"del": "^6.0.0",
+		"file-loader": "^6.2.0",
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^8.0.0",
 		"gulp-cssbeautify": "^3.0.0",
@@ -26,6 +27,7 @@
 		"gulp-uglify": "^3.0.2",
 		"node-sass": "^5.0.0",
 		"panini": "^1.7.1",
+		"url-loader": "^4.1.1",
 		"webpack": "^5.62.1",
 		"webpack-cli": "^4.9.1"
 	}

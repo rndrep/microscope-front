@@ -1,0 +1,133 @@
+.microscope {
+	z-index: 300;
+	position: absolute;
+
+	top: 0;
+	left: 0;
+
+	display: flex;
+	padding: 1rem;
+
+	justify-content: center;
+
+	width: 100%;
+	height: 100%;
+
+	border-radius: 100%;
+}
+
+.micro__img {
+	position: absolute;
+
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	border-radius: 100%;
+}
+
+.micro__img.yes {
+	opacity: 1;
+	z-index: 11;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	pointer-events: none;
+}
+
+.overlay::before,
+.overlay::after {
+	z-index: 500;
+
+	content: "";
+	display: block;
+
+	position: absolute;
+	background: rgba(255, 255, 255, 0.678);
+}
+
+.overlay::before {
+	width: 2px;
+	height: 100%;
+
+	top: 0;
+	left: 50%;
+
+	transform: translateX(-50%);
+}
+
+.overlay::after {
+	width: 100%;
+	height: 2px;
+
+	top: 50%;
+	left: 0;
+
+	transform: translateY(-50%);
+}
+
+.microscope-name {
+	z-index: 600;
+
+	position: relative;
+	display: inline;
+
+	font-family: sans-serif;
+	font-size: 1.5rem;
+	color: black;
+
+	padding: 0.5rem;
+
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.wheel {
+	z-index: 400;
+	position: relative;
+
+	width: 100%;
+	height: 100%;
+
+	border-radius: 100%;
+}
+
+.content {
+	display: flex;
+
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+}
+
+.wrap {
+	display: flex;
+	align-items: flex-end;
+}
+
+.microscope-container {
+	position: relative;
+
+	width: 490px;
+	height: 490px;
+}
+
+.degrees {
+	font-family: sans-serif;
+	font-size: 1.5rem;
+
+	width: 2rem;
+
+	margin-left: 4rem;
+	margin-right: auto;
+}

@@ -13,5 +13,20 @@ module.exports = {
 
 	devtool: "source-map",
 
-	module: {},
+	module: {
+		// 	rules: [
+		// 		{
+		// 			test: /\.(png|svg|jpg|jpeg|gif|tiff)$/,
+		// 			use: [
+		// 				{
+		// 					loader: "file-loader",
+		// 					options: {
+		// 						name: "[name].[ext]",
+		// 						outputPath: "./dist/assets/img/"
+		// 					},
+		// 				},
+		// 			],
+		// 		},
+		// 	],
+	},
 };
