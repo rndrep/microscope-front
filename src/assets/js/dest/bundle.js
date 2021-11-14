@@ -44824,113 +44824,208 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "microscope": () => (/* binding */ microscope),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap_Draggable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/Draggable */ "./node_modules/gsap/Draggable.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_Draggable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/Draggable */ "./node_modules/gsap/Draggable.js");
+/* harmony import */ var _services_services_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/services.js */ "./src/assets/js/services/services.js");
 
 
 
 
-gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_Draggable__WEBPACK_IMPORTED_MODULE_1__.Draggable);
+gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.registerPlugin(gsap_Draggable__WEBPACK_IMPORTED_MODULE_2__.Draggable);
 
-function microscope() {
+function microscope(urlResource) {
+	console.log(urlResource);
+	const testUrl = urlResource;
 	const smooth = true;
+	const microscopePpl = document.createElement("div");
+	const microscopeXpl = document.createElement("div");
+	const ppl = document.getElementsByClassName("ppl");
+	const xpl = document.getElementsByClassName("xpl");
+	microscopePpl.className = "microscope";
+	microscopeXpl.className = "microscope";
 
-	gsap_Draggable__WEBPACK_IMPORTED_MODULE_1__.Draggable.create(".wheel", {
-		type: "rotation",
-		minimumMovement: 1,
-
-		onDrag: function () {
-			// console.log(this.rotation);
-			// градус поворота
-			return this.rotation - 360 * Math.floor(this.rotation / 360);
-		},
-	});
-
-	const getMicroscopeImages = async (url) => {
-		// GET запрос возвращает промис http://vmicro.tpu.ru/microscope/rock/test
-		const res = await fetch(url);
-
-		if (!res.ok) {
-			throw new Error(`Could not fetch ${url}, status: ${res.status}`);
-		}
-
-		return await res.json();
-	};
-
-	getMicroscopeImages("http://vmicro.tpu.ru/microscope/rock/test").then((data) => {
-		for (let i in data) {
-			new Microscope(data.ppl).render();
-		}
-	});
+	ppl[0].append(microscopePpl);
+	xpl[0].append(microscopeXpl);
 
 	class Microscope {
-		// передаем параметры из вне при создании экземпляра класса
-		constructor(images = [], rotation = 0, smoothness = true) {
-			// this позволяет обращаться к отдельному экземляру
-			this.images = images;
+		constructor(
+			microscopeElement,
+			images = [],
+			parentSelector,
+			rotation = 0,
+			smoothness = true,
+			shift
+		) {
+			this.microscopeElement = microscopeElement;
+			this.images = images.reverse();
 			this.rotation = rotation;
 			this.smoothness = smoothness;
+			this._shift = shift;
+			this.parent = document.querySelector(parentSelector);
+
+			this.sectionDeg = 360 / this.images.length;
+			this.sectionDeg = 5; //TODO: fix
+			this.sectionPercent = (this.rotation / this.sectionDeg) % 1;
+			this.index = Math.floor(this.rotation / this.sectionDeg);
+			this.prev = 0 === this.index ? this.images.length - 1 : this.index - 1;
+			this.next = this.images.length - 1 === this.index ? 0 : this.index + 1;
+			this.curRot = this.getRotationStyle(this.getDegree());
+			this.nextRot = this.getRotationStyle(this.getDegree(-1));
+			this.prevRot = this.getRotationStyle(this.getDegree(1));
+		}
+
+		update(rotation) {
+			this.sectionPercent = (rotation / this.sectionDeg) % 1;
+			this.index = Math.floor(rotation / this.sectionDeg);
+			this.prev = 0 === this.index ? this.images.length - 1 : this.index - 1;
+			this.next = this.images.length - 1 === this.index ? 0 : this.index + 1;
+			this.curRot = this.getRotationStyle(this.getDegree());
+			this.nextRot = this.getRotationStyle(this.getDegree(-1));
+			this.prevRot = this.getRotationStyle(this.getDegree(1));
+			this.render();
+		}
+
+		setRotation(value) {
+			this.rotation = value;
+		}
+
+		getRotationStyle(rotationValue) {
+			return this.sectionDeg ? `rotate(${rotationValue}deg)` : "";
+		}
+
+		getDegree(delta = 0) {
+			let offset = 0;
+			if (delta > 0) {
+				offset = this.sectionDeg;
+			} else if (delta < 0) {
+				offset = this.sectionDeg * -1;
+			}
+			return this.sectionPercent * this.sectionDeg + offset;
+		}
+
+		set shift(shift) {
+			if (typeof shift === "number" && shift == (5 || 0)) {
+				this._shift = shift;
+			} else {
+				console.log("Недопустимое значение");
+			}
+		}
+
+		get shift() {
+			return this._shift;
+		}
+
+		showShift() {
+			console.log(`значение ${this._shift} `);
 		}
 
 		render() {
-			const element = document.createElement("div");
-			element.className = "microscope";
-			const parent = document.querySelector(".microscope-container");
+			const imgElements = this.images.map((image, i, all) => {
+				const imgElement =
+					document.querySelector('img[src="' + image + '"]') ||
+					document.createElement("img");
 
-			const el = this.images.map((image, i, all) => {
-				const isCurr = i === index;
-				const isPrev = i === prev;
-				const isNext = i === next;
+				// const imgElement = document.createElement("img");
+				const isCurr = i === this.index;
+				const isPrev = i === this.prev;
+				const isNext = i === this.next;
 
 				const getVisibility = () => {
 					return isCurr || isNext ? "visible" : "hidden";
 				};
+
 				const getTransform = () => {
 					// let scale = getScale();
-					let rot = "";
+					let rotate = "";
 					if (isCurr) {
-						rot = curRot;
+						rotate = this.curRot;
 					}
 					if (isPrev) {
-						rot = prevRot;
+						rotate = this.prevRot;
 					}
 					if (isNext) {
-						rot = nextRot;
+						rotate = this.nextRot;
 					}
 					// return rot + " " + scale;
-					return rot;
+					return rotate;
 				};
+
+				const getOpacity = () => {
+					if (isCurr) {
+						return 1;
+					}
+					if (this.sectionPercent === 0) {
+						if (!isCurr) {
+							return 0;
+						}
+					} else {
+						if (isNext) {
+							return this.sectionPercent;
+						}
+					}
+				};
+
 				const style = {
 					zIndex: 10 + i,
 					visibility: getVisibility(),
 					transform: getTransform(),
 					opacity: getOpacity(),
 				};
-			});
-			element.innerHTML = `
-      <div>
-			${el
-				`<img
-				class='yes'
-				src=${image}
-		/>`
-			}
-			</div>
-			`;
 
-			element.innerHTML = `
-			<img
-          class='yes'
-          src=${image}
-      />
-			`;
-			// src=${this.images}
-			parent.append(element);
+				imgElement.src = image;
+				imgElement.className = `microscope__img ${isCurr ? "yes" : ""}`;
+				imgElement.style.zIndex = style.zIndex;
+				imgElement.style.visibility = style.visibility;
+				imgElement.style.transform = style.transform;
+				imgElement.style.opacity = style.opacity;
+				imgElement.key = i;
+
+				return imgElement;
+			});
+
+			imgElements.forEach((item) => {
+				this.microscopeElement.append(item);
+			});
+
+			this.parent.append(this.microscopeElement);
 		}
 	}
+	(0,_services_services_js__WEBPACK_IMPORTED_MODULE_0__.getResource)(testUrl).then((data) => {
+		let pplMicro = new Microscope(
+			microscopePpl,
+			data.ppl,
+			".ppl",
+			// draggables[0].rotation
+			0
+		);
+		pplMicro.render();
 
-	// объект не сохранится
-	// new Microscope(getMicroscopeImages(), 0).render();
+		let xplMicro = new Microscope(
+			microscopeXpl,
+			data.xpl,
+			".xpl",
+			// draggables[0].rotation
+			0
+		);
+		xplMicro.render();
+
+		let draggables = gsap_Draggable__WEBPACK_IMPORTED_MODULE_2__.Draggable.create(".wheel", {
+			type: "rotation",
+			minimumMovement: 1,
+			// trigger: ".wheel",
+
+			onDrag(e) {
+				// console.log(this.rotation);
+				// градус поворота
+				// gsap.set(".microscope", {
+				// rotation: this.rotation - 360 * Math.floor(this.rotation / 360),
+				// });
+				console.log(this.rotation);
+				pplMicro.update(this.rotation - 360 * Math.floor(this.rotation / 360));
+				xplMicro.update(this.rotation - 360 * Math.floor(this.rotation / 360));
+			},
+		});
+	});
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (microscope);
@@ -44983,6 +45078,34 @@ function slick() {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (slick);
+
+
+/***/ }),
+
+/***/ "./src/assets/js/services/services.js":
+/*!********************************************!*\
+  !*** ./src/assets/js/services/services.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getResource": () => (/* binding */ getResource)
+/* harmony export */ });
+const getResource = async (urlResource) => {
+	// GET запрос возвращает промис http://vmicro.tpu.ru/microscope/rock/test
+	const res = await fetch(urlResource);
+	console.log(urlResource);
+
+	if (!res.ok) {
+		throw new Error(`Could not fetch ${url}, status: ${res.status}`);
+	}
+
+	return await res.json();
+};
+
+
 
 
 /***/ })
@@ -45038,6 +45161,18 @@ function slick() {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -45063,6 +45198,9 @@ var __webpack_exports__ = {};
   !*** ./src/assets/js/app.js ***!
   \******************************/
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
@@ -45089,9 +45227,12 @@ window.addEventListener("DOMContentLoaded", () => {
 		(0,_modules_map__WEBPACK_IMPORTED_MODULE_2__["default"])();
 	});
 
-	(0,_modules_microscope__WEBPACK_IMPORTED_MODULE_3__["default"])();
+	__webpack_require__.g.microscopeFunc = _modules_microscope__WEBPACK_IMPORTED_MODULE_3__["default"];
+
+	// microscope();
 });
 
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_modules_microscope__WEBPACK_IMPORTED_MODULE_3__["default"]);
 // Draggable.create(".wheel", {
 // 	type: "rotation",
 

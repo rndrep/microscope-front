@@ -18,9 +18,12 @@ window.addEventListener("DOMContentLoaded", () => {
 		map();
 	});
 
-	microscope();
+	global.microscopeFunc = microscope;
+
+	// microscope();
 });
 
+export default microscope;
 // Draggable.create(".wheel", {
 // 	type: "rotation",
 
