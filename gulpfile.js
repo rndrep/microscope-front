@@ -13,14 +13,17 @@ const rigger = require("gulp-rigger");
 const uglify = require("gulp-uglify");
 const plumber = require("gulp-plumber");
 const imagemin = require("gulp-imagemin");
+const gulpif = require("gulp-if");
 const del = require("del");
 const panini = require("panini");
 const browsersync = require("browser-sync").create();
 const svgSprite = require("gulp-svg-sprite");
 const webpack = require("webpack-stream");
 
+let isDev = true;
+let isProd = !isDev;
+
 let webConfig = {
-	mode: "development",
 	output: {
 		filename: "bundle.js",
 	},
@@ -33,6 +36,8 @@ let webConfig = {
 			},
 		],
 	},
+	mode: isDev ? "development" : "production",
+	devtool: isDev ? "eval" : false,
 };
 
 /* Paths */
@@ -120,19 +125,25 @@ function css() {
 		.pipe(cssbeautify())
 		.pipe(dest(path.build.css))
 		.pipe(
-			cssnano({
-				zindex: false,
-				discardComments: {
-					removeAll: true,
-				},
-			})
+			gulpif(
+				isProd,
+				cssnano({
+					zindex: false,
+					discardComments: {
+						removeAll: true,
+					},
+				})
+			)
 		)
 		.pipe(removeComments())
 		.pipe(
-			rename({
-				suffix: ".min",
-				extname: ".css",
-			})
+			gulpif(
+				isProd,
+				rename({
+					suffix: ".min",
+					extname: ".css",
+				})
+			)
 		)
 		.pipe(dest(path.build.css))
 		.pipe(browsersync.stream());

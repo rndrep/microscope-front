@@ -2,6 +2,8 @@
 
 import $ from "jquery";
 import "bootstrap";
+import "bootstrap-select";
+$.fn.selectpicker.Constructor.BootstrapVersion = "4";
 
 import map from "./modules/map";
 import microscope from "./modules/microscope";
@@ -17,6 +19,8 @@ window.addEventListener("DOMContentLoaded", () => {
 	$("#accordion-button-map").on("click", function (event) {
 		map();
 	});
+
+	$("select").selectpicker();
 
 	// microscope();
 });
