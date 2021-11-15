@@ -17,9 +17,26 @@ const del = require("del");
 const panini = require("panini");
 const browsersync = require("browser-sync").create();
 const svgSprite = require("gulp-svg-sprite");
+const webpack = require("webpack-stream");
+
+let webConfig = {
+	mode: "development",
+	output: {
+		filename: "bundle.js",
+	},
+	module: {
+		rules: [
+			{
+				test: /\.js$/,
+				loader: "babel-loader",
+				exclude: "/node_modules/",
+			},
+		],
+	},
+};
 
 /* Paths */
-var path = {
+const path = {
 	build: {
 		html: "./dist/",
 		js: "./dist/assets/js/",
@@ -46,6 +63,14 @@ var path = {
 	},
 	clean: "./dist",
 };
+
+function script() {
+	return gulp
+		.src("./src/assets/js/app.js")
+		.pipe(webpack(webConfig))
+		.pipe(gulp.dest(path.build.js))
+		.pipe(browsersync.stream());
+}
 
 /* Настройка локального сервера */
 function browserSync(done) {
@@ -113,21 +138,23 @@ function css() {
 		.pipe(browsersync.stream());
 }
 
-function js() {
-	return src(path.src.js, { base: "./src/assets/js/dest" })
-		.pipe(plumber())
-		// .pipe(rigger())
-		.pipe(gulp.dest(path.build.js))
-		// .pipe(uglify())
-		.pipe(
-			rename({
-				suffix: ".min",
-				extname: ".js",
-			})
-		)
-		.pipe(dest(path.build.js))
-		.pipe(browsersync.stream());
-}
+// function js() {
+// 	return (
+// 		src(path.src.js, { base: "./src/assets/js/dest" })
+// 			.pipe(plumber())
+// 			// .pipe(rigger())
+// 			.pipe(gulp.dest(path.build.js))
+// 			// .pipe(uglify())
+// 			.pipe(
+// 				rename({
+// 					suffix: ".min",
+// 					extname: ".js",
+// 				})
+// 			)
+// 			.pipe(dest(path.build.js))
+// 			.pipe(browsersync.stream())
+// 	);
+// }
 
 function images() {
 	return src(path.src.images).pipe(imagemin()).pipe(dest(path.build.images));
@@ -165,19 +192,19 @@ function clean() {
 function watchFiles() {
 	gulp.watch([path.watch.html], html);
 	gulp.watch([path.watch.css], css);
-	gulp.watch([path.watch.js], js);
+	// gulp.watch([path.watch.js], js);
 	gulp.watch([path.watch.images], images);
 	gulp.watch([path.watch.svg], svg);
 	gulp.watch([path.watch.video], video);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, images, svg, video)); // для выполнения всех тасков
+const build = gulp.series(clean, gulp.parallel(html, css, images, script, svg, video)); // для выполнения всех тасков
 const watch = gulp.parallel(build, watchFiles, browserSync);
 
 /* Exports Tasks */
 exports.html = html;
 exports.css = css;
-exports.js = js;
+exports.script = script;
 exports.images = images;
 exports.svg = svg;
 exports.video = video;
