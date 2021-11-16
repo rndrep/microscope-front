@@ -94,7 +94,7 @@ $spacer: 1.6rem;
 /* Vendor libs */
 @import "vendor/slick";
 @import "vendor/leaflet";
-@import "vendor/bootstrap-select";
+@import "vendor/slimselect";
 
 body {
 	margin: 0;
@@ -116,4 +116,11 @@ p {
 
 a {
 	color: var(--c, $green);
+}
+
+.placeholder {
+	background-color: $white;
+	cursor: pointer;
+	opacity: 1;
+	min-height: 0;
 }

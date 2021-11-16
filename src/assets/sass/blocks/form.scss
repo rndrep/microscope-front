@@ -1,6 +1,6 @@
 .form-label {
 	display: block;
-	margin: 0;
+	margin-bottom: 0.4rem;
 
 	color: $gray-700;
 	font-weight: 500;
@@ -8,10 +8,7 @@
 
 .form-control,
 .form-select {
+	line-height: 1.6;
+	min-height: 3.5rem;
 	color: $gray-700;
-	margin: 0.4rem 0 0;
-}
-
-.form-select {
-	font-size: 1.6rem;
 }

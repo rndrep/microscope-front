@@ -44,7 +44,7 @@ let webConfig = {
 const path = {
 	build: {
 		html: "./dist/",
-		js: "./dist/assets/js/",
+		script: "./dist/assets/js/",
 		css: "./dist/assets/css/",
 		images: "./dist/assets/img/",
 		svg: "./dist/assets/sprite/",
@@ -52,7 +52,7 @@ const path = {
 	},
 	src: {
 		html: "src/*.html",
-		js: "src/assets/js/dest/bundle.js",
+		script: "src/assets/js/dest/bundle.js",
 		css: "src/assets/sass/style.scss",
 		images: "src/assets/img/**/*.{jpg,png,svg,gif,ico}",
 		svg: "src/assets/svg/**/*.svg",
@@ -60,7 +60,7 @@ const path = {
 	},
 	watch: {
 		html: "src/**/*.html",
-		js: "src/assets/js/dest/bundle.js",
+		script: "src/assets/js/app.js",
 		css: "src/assets/sass/**/*.scss",
 		images: "src/assets/img/**/*.{jpg,png,svg,gif,ico}",
 		svg: "src/assets/svg/**/*.svg",
@@ -73,7 +73,7 @@ function script() {
 	return gulp
 		.src("./src/assets/js/app.js")
 		.pipe(webpack(webConfig))
-		.pipe(gulp.dest(path.build.js))
+		.pipe(gulp.dest(path.build.script))
 		.pipe(browsersync.stream());
 }
 
@@ -203,7 +203,7 @@ function clean() {
 function watchFiles() {
 	gulp.watch([path.watch.html], html);
 	gulp.watch([path.watch.css], css);
-	// gulp.watch([path.watch.js], js);
+	gulp.watch([path.watch.script], script);
 	gulp.watch([path.watch.images], images);
 	gulp.watch([path.watch.svg], svg);
 	gulp.watch([path.watch.video], video);

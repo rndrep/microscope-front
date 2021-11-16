@@ -2,8 +2,7 @@
 
 import $ from "jquery";
 import "bootstrap";
-import "bootstrap-select";
-$.fn.selectpicker.Constructor.BootstrapVersion = "4";
+import SlimSelect from "slim-select";
 
 import map from "./modules/map";
 import microscope from "./modules/microscope";
@@ -20,7 +19,18 @@ window.addEventListener("DOMContentLoaded", () => {
 		map();
 	});
 
-	$("select").selectpicker();
+	let all = document.querySelectorAll(".single");
+	console.log(all);
+
+	document.querySelectorAll(".single").forEach(function (node) {
+		new SlimSelect({
+			select: ".single",
+			searchPlaceholder: "Поиск",
+			deselectLabel: "Не найдено",
+			showSearch: "false",
+			searchText: "Не найдено",
+		});
+	});
 
 	// microscope();
 });
