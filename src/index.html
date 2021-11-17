@@ -114,23 +114,24 @@ title: Home
 							</div>
 							<!-- Описание -->
 							<div class="col">
-								<label class="form-label">Описание </label
-								><input type="text" class="form-control" />
+								<label class="form-label">Описание </label>
+								<input type="text" class="form-control" />
 							</div>
 							<!-- Тип -->
 							<div class="col">
-								<label class="form-label">Тип </label>
-								<select id="single" class="single">
-									<option>-</option>
+								<label class="form-label">Тип </label
+								><select class="select-multiply" multiple>
 									<option>магматический</option>
 									<option>метаморфический</option>
 									<option>осадочный</option>
+									<option>осадоsdfчный</option>
+									<option>sdfsdfsdfsdf</option>
 								</select>
 							</div>
 							<!-- Класс -->
 							<div class="col">
 								<label class="form-label">Класс </label
-								><select id="single" class="single">
+								><select class="select-single">
 									<option selected>-</option>
 									<option value="1">плутонический</option>
 									<option value="2">вулканический</option>
@@ -144,48 +145,44 @@ title: Home
 							</div>
 							<!-- Отряд -->
 							<div class="col">
-								<label class="form-label"
-									>Отряд
-									<select class="">
-										<option selected>-</option>
-										<option value="1">ультраосновной</option>
-										<option value="2">основной</option>
-										<option value="3">средний</option>
-										<option value="4">кислый</option>
-									</select></label
-								>
+								<label class="form-label">Отряд </label
+								><select class="select-single">
+									<option selected>-</option>
+									<option value="1">ультраосновной</option>
+									<option value="2">основной</option>
+									<option value="3">средний</option>
+									<option value="4">кислый</option>
+								</select>
 							</div>
 							<!-- Вид -->
 							<div class="col">
-								<label class="form-label"
-									>Вид
-									<select class="">
-										<option selected>-</option>
-										<option value="1">гранит</option>
-										<option value="2">риолит</option>
-										<option value="3">гранит-порфир</option>
-										<option value="4">роговик хистатолитовый</option>
-										<option value="5">гнейс биотитовый</option>
-										<option value="6">гнейс биотитовый</option>
-										<option value="7">эклогит</option>
-										<option value="8">псаммитолиты (песчаные)</option>
-										<option value="9">пелитолиты (глинистые)</option>
-										<option value="10">алюминиевый</option>
-										<option value="11">карбонатный</option>
-									</select></label
-								>
+								<label class="form-label">Вид </label>
+								<select class="select-single">
+									<option selected>-</option>
+									<option value="1">гранит</option>
+									<option value="2">риолит</option>
+									<option value="3">гранит-порфир</option>
+									<option value="4">роговик хистатолитовый</option>
+									<option value="5">гнейс биотитовый</option>
+									<option value="6">гнейс биотитовый</option>
+									<option value="7">эклогит</option>
+									<option value="8">псаммитолиты (песчаные)</option>
+									<option value="9">пелитолиты (глинистые)</option>
+									<option value="10">алюминиевый</option>
+									<option value="11">карбонатный</option>
+								</select>
 							</div>
 							<!-- Породообразующие минералы -->
 							<div class="col">
 								<label class="form-label"
 									>Породообразующие минералы
-									<select class="">
-										<option selected>-</option>
-										<option value="1">оливин</option>
-										<option value="2">пироксен</option>
-										<option value="3">ортопироксен</option>
-									</select></label
-								>
+								</label>
+								<select class="select-single">
+									<option selected>-</option>
+									<option value="1">оливин</option>
+									<option value="2">пироксен</option>
+									<option value="3">ортопироксен</option>
+								</select>
 							</div>
 						</div>
 						<div class="search__btn">
@@ -213,35 +210,28 @@ title: Home
 						>
 							<!-- Название минерала -->
 							<div class="col">
-								<label class="form-label"
-									>Название
-									<input type="text" class="form-control" />
-								</label>
+								<label class="form-label">Название </label>
+								<input type="text" class="form-control" />
 							</div>
 							<!-- Описание минерала -->
 							<div class="col">
-								<label class="form-label"
-									>Описание <input type="text" class="form-control"
-								/></label>
+								<label class="form-label">Описание </label
+								><input type="text" class="form-control" />
 							</div>
 							<!-- Твердость минерала -->
 							<div class="col">
-								<label class="form-label"
-									>Твердость 1-10
-									<input type="text" class="form-control"
-								/></label>
+								<label class="form-label">Твердость 1-10 </label
+								><input type="text" class="form-control" />
 							</div>
 							<!-- Поиск по породе -->
 							<div class="col">
-								<label class="form-label"
-									>Генезис
-									<select class="">
-										<option selected>-</option>
-										<option value="1">оливинит</option>
-										<option value="2">пироксенит</option>
-										<option value="3">габро</option>
-									</select></label
-								>
+								<label class="form-label">Генезис </label
+								><select class="select-single">
+									<option>-</option>
+									<option>оливинит</option>
+									<option>пироксенит</option>
+									<option>габро</option>
+								</select>
 							</div>
 						</div>
 						<div class="search__btn">
@@ -269,21 +259,18 @@ title: Home
 						>
 							<!-- Название окаменелости -->
 							<div class="col">
-								<label class="form-label"
-									>Название <input type="text" class="form-control"
-								/></label>
+								<label class="form-label">Название </label
+								><input type="text" class="form-control" />
 							</div>
 							<!-- Поиск по породе -->
 							<div class="col">
-								<label class="form-label"
-									>Генезис
-									<select class="">
-										<option selected>-</option>
-										<option value="1">оливинит</option>
-										<option value="2">пироксенит</option>
-										<option value="3">габро</option>
-									</select></label
-								>
+								<label class="form-label">Генезис </label>
+								<select class="select-single">
+									<option>-</option>
+									<option>оливинит</option>
+									<option>пироксенит</option>
+									<option>габро</option>
+								</select>
 							</div>
 						</div>
 						<div class="search__btn">

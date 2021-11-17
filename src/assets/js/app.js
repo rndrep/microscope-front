@@ -20,17 +20,54 @@ window.addEventListener("DOMContentLoaded", () => {
 	});
 
 	let all = document.querySelectorAll(".single");
-	console.log(all);
+	// console.log(all);
 
-	document.querySelectorAll(".single").forEach(function (node) {
+	// all.forEach((element, index, array) => {
+	// 	element = new SlimSelect({
+	// 		select: element,
+	// 		searchPlaceholder: "Поиск",
+	// 		deselectLabel: "Не найдено",
+	// 		showSearch: "false",
+	// 		searchText: "Не найдено",
+	// 	});
+	// });
+
+	document.querySelectorAll(".select-single").forEach((element) => {
 		new SlimSelect({
-			select: ".single",
+			select: element,
 			searchPlaceholder: "Поиск",
-			deselectLabel: "Не найдено",
 			showSearch: "false",
 			searchText: "Не найдено",
+			placeholder: "-",
+			deselectLabel: "×",
+			allowDeselect: true,
+			showContent: "down",
+			onChange: (element) => {
+				console.log(element);
+			},
 		});
 	});
+
+	document.querySelectorAll(".select-multiply").forEach((element) => {
+		var select = new SlimSelect({
+			select: ".select-multiply",
+			showContent: "auto",
+			limit: false,
+			searchPlaceholder: "Поиск",
+			showSearch: "false",
+			searchText: "Не найдено",
+			placeholder: "-",
+			deselectLabel: "×",
+			allowDeselect: true,
+			hideSelectedOption: true,
+			closeOnSelect: false,
+			showContent: "down",
+			onChange: (element) => {
+				console.log(element);
+			},
+		});
+	});
+	console.log(select.selected());
 
 	// microscope();
 });
