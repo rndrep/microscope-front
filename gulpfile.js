@@ -60,7 +60,7 @@ const path = {
 	},
 	watch: {
 		html: "src/**/*.html",
-		script: "src/assets/js/app.js",
+		script: "src/assets/js/**/*.js",
 		css: "src/assets/sass/**/*.scss",
 		images: "src/assets/img/**/*.{jpg,png,svg,gif,ico}",
 		svg: "src/assets/svg/**/*.svg",
@@ -83,7 +83,7 @@ function browserSync(done) {
 		server: {
 			baseDir: "./dist/",
 		},
-		port: 3000,
+		port: 4000,
 	});
 }
 
