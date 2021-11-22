@@ -11,6 +11,8 @@ const sass = require("gulp-sass");
 const cssnano = require("gulp-cssnano");
 const rigger = require("gulp-rigger");
 const uglify = require("gulp-uglify");
+const htmlPartial = require("gulp-html-partial");
+const fileinclude = require("gulp-file-include");
 const plumber = require("gulp-plumber");
 const imagemin = require("gulp-imagemin");
 const gulpif = require("gulp-if");
@@ -99,12 +101,9 @@ function html() {
 			// подзадачи для html файлов
 			.pipe(plumber())
 			.pipe(
-				panini({
-					root: "src/",
-					layouts: "src/tpl/layouts/",
-					partials: "src/tpl/partials/",
-					helpers: "src/tpl/helpers/",
-					data: "src/tpl/data/",
+				fileinclude({
+					prefix: "@@",
+					basepath: "./src/partials/",
 				})
 			)
 			.pipe(dest(path.build.html))
